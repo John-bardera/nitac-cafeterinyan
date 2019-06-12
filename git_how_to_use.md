@@ -32,6 +32,12 @@
 これを実行して初めて他のPCからでも確認できる
 
 これらはこの順番で実行しないといけない
-`git add ./`
-`git commit -m "hoge"`
-`git push origin nyan`
+> `git add ./`
+> `git commit -m "hoge"`
+> `git push origin nyan`
+
+## remotesの最新ファイルを持ってくる
+> `git fetch`
+> `git pull origin ~~`
+
+`fetch`でremotesの最新版のデータ集合を持ってきて、`pull origin ~~`で`~~`branchに最新版を適用する
