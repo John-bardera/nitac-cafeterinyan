@@ -1,17 +1,4 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- */
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -49,17 +36,43 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <header class="row">
 </header>
 <div class="todayAB">
-    今日のメニュー
     <div class="todayA">
-    <img src=<?php ?>>
+        <div class="todayA_txt">今日のAメニュー</div>
+        <img src="<?php ?>" class="todayA_img">
+        <div class="iine"></div>
+	<div class="todayA_so">売り切れ</div>
     </div>
     <div class="todayB">
-    <img src=<?php ?>>
+        <div class="todayB_txt">今日のBメニュー</div>
+        <img src="<?php ?>" class="todayB_img">
+        <div class="iine"></div>
+        <div class="todayB_so">売り切れ</div>
     </div>
 </div>
-<div class="josetu">
+<div class="josetsu">
+    常設メニュー
+    <?php for() { ?>
+        <img src="<?php ?>" class="josetsu_img">
+        <div class="iine"></div>
+        <div class="josetsu_so"></div>
+    <?php } ?>
 </div>
 <div class="weeklyAB">
+    今週のメニュー
+    <div class="weeklyA">
+        <?php for() { ?>
+            <img src="<?php ?>" class="weeklyA_img">
+            <div class="iine"></div>
+            <div class="weeklyA_so"></div>
+        <?php } ?>
+    </div>
+    <div class="weeklyB">
+        <?php for() { ?>
+            <img src="<?php ?>" class="weeklyB_img">
+            <div class="iine"></div>
+            <div class="weeklyB_so"></div>
+        <?php } ?>
+    </div>
 </div>
 </body>
 </html>
