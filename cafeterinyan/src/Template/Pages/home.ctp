@@ -9,7 +9,7 @@ use Cake\Http\Exception\NotFoundException;
 $this->layout = false;
 echo $this->Html->css('home')
 
-if (!Configure::read('debug')) :
+if (!Configure::read('debug')):
     throw new NotFoundException(
         'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
     );
@@ -53,7 +53,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <div class="josetsu">
     常設メニュー
     <?php for ($1 = 1; $i <= 10; $i++) { ?>
-        <img src="<?php ?>" class="josetsu_img"/>
+        <img src="<?php ?>" class="josetsu_img">
         <div class="iine"></div>
         <div class="josetsu_so"></div>
     <?php } ?>
@@ -61,7 +61,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <div class="weeklyAB">
     今週のメニュー
     <div class="weeklyA">
-        <?php for() { ?>
+        <?php for ($1 = 1; $i <= 10; $i++) { ?>
             <img src="<?php ?>" class="weeklyA_img">
             <div class="iine"></div>
             <div class="weeklyA_so"></div>
