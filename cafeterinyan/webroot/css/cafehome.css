@@ -5,14 +5,12 @@ body {
 	display: flex;
 	flex-direction: row;
 }
-div {
-	height: 100%;
-	width: 100%;
-}
 .todayAB {
 	border: solid 1px #ffffff;
 	height: 25%;
 	width: 100%;
 }
 .todayA .todayB {
+	height: 100%;
+	width: 100%;
 }
