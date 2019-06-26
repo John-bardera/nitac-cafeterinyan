@@ -37,7 +37,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 <header class="row">
 </header>
-<?php
+<!--<?php
 
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
 $link = pg_connect($conn);
@@ -58,16 +58,16 @@ $close_flag = pg_close($link);
 if ($close_flag){
     print('切断に成功しました。<br>');
 }
-?>
+?>-->
 <div class="todayAB">
     <div class="todayA">
-        <div class="todayA_txt">今日のAメニュー</div>
+        <div class="today-title">今日のAメニュー</div>
         <img src="<?php ?>" class="todayA_img">
         <div class="iine"></div>
         <div class="todayA_so">売り切れ</div>
     </div>
     <div class="todayB">
-        <div class="todayB_txt">今日のBメニュー</div>
+        <div class="today-title">今日のBメニュー</div>
         <img src="<?php ?>" class="todayB_img">
         <div class="iine"></div>
         <div class="todayB_so">売り切れ</div>

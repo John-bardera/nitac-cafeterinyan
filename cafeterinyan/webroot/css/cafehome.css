@@ -1,16 +1,28 @@
 body {
+	display: flex;
+	flex-direction: column;
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
+}
+div {
 	display: flex;
-	flex-direction: row;
 }
 .todayAB {
-	border: solid 1px #ffffff;
+	flex-direction: row;
+	border: solid 1px #000;
 	height: 25%;
-	width: 100%;
+	width: auto;
 }
 .todayA .todayB {
+	justify-content: center;
 	height: 100%;
 	width: 100%;
+}
+.today-title {
+	font-size: 20px;
+
+}
+.josetsu {
+
 }
