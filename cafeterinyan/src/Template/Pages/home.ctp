@@ -7,16 +7,15 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
+echo $this->Html->css('home');
 
-if (!Configure::read('debug')) :
+if (!Configure::read('debug')):
     throw new NotFoundException(
         'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
     );
 endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
-
-/*$dbconneect = pg_conncet("host=localhost port=5432 dbname=team5db user=team5 password=hogenyan")*/
 ?>
 <!DOCTYPE html>
 
@@ -54,14 +53,50 @@ $arr = pg_fetch_array($result);
 <div><?php echo $arr[0]; ?></div>
 <?php
 // PostgreSQLに対する処理
-
 $close_flag = pg_close($link);
 
 if ($close_flag){
     print('切断に成功しました。<br>');
 }
-
 ?>
-
+<div class="todayAB">
+    <div class="todayA">
+        <div class="todayA_txt">今日のAメニュー</div>
+        <img src="<?php ?>" class="todayA_img">
+        <div class="iine"></div>
+	<div class="todayA_so">売り切れ</div>
+    </div>
+    <div class="todayB">
+        <div class="todayB_txt">今日のBメニュー</div>
+        <img src="<?php ?>" class="todayB_img">
+        <div class="iine"></div>
+        <div class="todayB_so">売り切れ</div>
+    </div>
+</div>
+<div class="josetsu">
+    常設メニュー
+    <?php for($i = 1; $i <= 10; $i++) { ?>
+        <img src="<?php ?>" class="josetsu_img">
+        <div class="iine"></div>
+        <div class="josetsu_so"></div>
+    <?php } ?>
+</div>
+<div class="weeklyAB">
+    今週のメニュー
+    <div class="weeklyA">
+        <?php for($i = 1; $i <= 10; $i++) { ?>
+            <img src="<?php ?>" class="weeklyA_img">
+            <div class="iine"></div>
+            <div class="weeklyA_so"></div>
+        <?php } ?>
+    </div>
+    <div class="weeklyB">
+        <?php for($i = 1; $i <= 10; $i++) { ?>
+            <img src="<?php ?>" class="weeklyB_img">
+            <div class="iine"></div>
+            <div class="weeklyB_so"></div>
+        <?php } ?>
+    </div>
+</div>
 </body>
 </html>
