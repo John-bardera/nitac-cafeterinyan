@@ -15,11 +15,9 @@ if (!Configure::read('debug')) :
 endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
-
-/*$dbconneect = pg_conncet("host=localhost port=5432 dbname=team5db user=team5 password=hogenyan")*/
 ?>
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 <head>
     <?= $this->Html->charset() ?>
@@ -37,31 +35,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <body class="home">
 
 <header class="row">
+<a href=""></a>
+
 </header>
-<?php
-
-$conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
-$link = pg_connect($conn);
-if (!$link) {
-    die('接続失敗です。'.pg_last_error());
-}
-
-print('接続に成功しました。<br>');
-
-$result = pg_query_params($link, 'SELECT image FROM menu_info WHERE id = $1', array("-1"));
-$arr = pg_fetch_array($result);
-?>
-<div><?php echo $arr[0]; ?></div>
-<?php
-// PostgreSQLに対する処理
-
-$close_flag = pg_close($link);
-
-if ($close_flag){
-    print('切断に成功しました。<br>');
-}
-
-?>
-
 </body>
 </html>
