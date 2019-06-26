@@ -64,7 +64,7 @@ if ($close_flag){
         <div class="todayA_txt">今日のAメニュー</div>
         <img src="<?php ?>" class="todayA_img">
         <div class="iine"></div>
-	<div class="todayA_so">売り切れ</div>
+        <div class="todayA_so">売り切れ</div>
     </div>
     <div class="todayB">
         <div class="todayB_txt">今日のBメニュー</div>
