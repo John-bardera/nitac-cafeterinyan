@@ -7,6 +7,7 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
+echo $this->Html->css('home')
 
 if (!Configure::read('debug')) :
     throw new NotFoundException(
@@ -51,8 +52,8 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 </div>
 <div class="josetsu">
     常設メニュー
-    <?php for() { ?>
-        <img src="<?php ?>" class="josetsu_img">
+    <?php for ($1 = 1; $i <= 10; $i++) { ?>
+        <img src="<?php ?>" class="josetsu_img"/>
         <div class="iine"></div>
         <div class="josetsu_so"></div>
     <?php } ?>
