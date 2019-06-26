@@ -7,7 +7,7 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
-echo $this->Html->css('home')
+echo $this->Html->css('home');
 
 if (!Configure::read('debug')):
     throw new NotFoundException(
@@ -52,7 +52,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 </div>
 <div class="josetsu">
     常設メニュー
-    <?php for ($1 = 1; $i <= 10; $i++) { ?>
+    <?php for($1 = 1; $i <= 10; $i++) { ?>
         <img src="<?php ?>" class="josetsu_img">
         <div class="iine"></div>
         <div class="josetsu_so"></div>
@@ -61,14 +61,14 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <div class="weeklyAB">
     今週のメニュー
     <div class="weeklyA">
-        <?php for ($1 = 1; $i <= 10; $i++) { ?>
+        <?php for($1 = 1; $i <= 10; $i++) { ?>
             <img src="<?php ?>" class="weeklyA_img">
             <div class="iine"></div>
             <div class="weeklyA_so"></div>
         <?php } ?>
     </div>
     <div class="weeklyB">
-        <?php for() { ?>
+        <?php for($1 = 1; $i <= 10; $i++) { ?>
             <img src="<?php ?>" class="weeklyB_img">
             <div class="iine"></div>
             <div class="weeklyB_so"></div>
