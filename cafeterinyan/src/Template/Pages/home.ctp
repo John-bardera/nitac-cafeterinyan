@@ -62,17 +62,21 @@ if ($close_flag){
 <div class="todayAB">
     <div class="today todayA">
         <div class="today-title">今日のAセット</div>
-        <img src="./img/sample.jpg" class="today_img">
+        <img src="./img/sample.jpg" class="today-img">
         <div class="iine-wrapper">
-            <div class="iine">hoge</div>
+            <div class="iine-box">
+                <div class="iine">hoge</div>
+            </div>
         </div>
         <div class="today-sold">売り切れ</div>
     </div>
     <div class="today">
         <div class="today-title">今日のBセット</div>
-        <img src="./img/sample.jpg" class="today_img">
+        <img src="./img/sample.jpg" class="today-img">
         <div class="iine-wrapper">
-            <div class="iine">hoge</div>
+            <div>
+                <div class="iine">hoge</div>
+            </div>
         </div>
         <div class="today-sold">売り切れ</div>
     </div>
@@ -80,25 +84,25 @@ if ($close_flag){
 <div class="josetsu">
     常設メニュー
     <?php for($i = 1; $i <= 10; $i++) { ?>
-        <img src="<?php ?>" class="josetsu_img">
+        <img src="<?php ?>" class="josetsu-img">
         <div class="iine"></div>
-        <div class="josetsu_so"></div>
+        <div class="josetsu-so"></div>
     <?php } ?>
 </div>
 <div class="weeklyAB">
     今週のメニュー
     <div class="weeklyA">
         <?php for($i = 1; $i <= 10; $i++) { ?>
-            <img src="<?php ?>" class="weeklyA_img">
+            <img src="<?php ?>" class="weeklyA-img">
             <div class="iine"></div>
-            <div class="weeklyA_so"></div>
+            <div class="weeklyA-so"></div>
         <?php } ?>
     </div>
     <div class="weeklyB">
         <?php for($i = 1; $i <= 10; $i++) { ?>
-            <img src="<?php ?>" class="weeklyB_img">
+            <img src="<?php ?>" class="weeklyB-img">
             <div class="iine"></div>
-            <div class="weeklyB_so"></div>
+            <div class="weeklyB-so"></div>
         <?php } ?>
     </div>
 </div>

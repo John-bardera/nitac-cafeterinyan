@@ -22,17 +22,17 @@ div {
 }
 .today {
     flex-direction: column;
-	justify-content: center;
 	height: 100%;
 	width: 50%;
     color: #000;
 }
 .today-title {
-	font-size: 10%;
+	font-size: 20px;
     min-height: 15%;
+    margin: 0 auto;
 }
 .today-img {
-    min-height: 80%;
+    min-height: 85%;
 }
 .today-sold {
 	visibility: hidden;
@@ -44,6 +44,11 @@ div {
     height: 25%;
     width: 100%;
 }
-.iine {
+.iine-box {
     margin: auto 0 0 auto;
+    background-color: #ffffff;
+    border: solid 1px #000;
+}
+.iine {
+    font-size: 10px;
 }
