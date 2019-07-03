@@ -65,7 +65,7 @@ if ($close_flag){
         <img src="./img/sample.jpg" class="today-img">
         <div class="iine-wrapper">
             <div class="iine-box">
-                <div class="iine">hoge</div>
+                <div class="iine"><span class="heart"></span>hoge</div>
             </div>
         </div>
         <div class="today-sold">売り切れ</div>
@@ -75,7 +75,7 @@ if ($close_flag){
         <img src="./img/sample.jpg" class="today-img">
         <div class="iine-wrapper">
             <div class="iine-box">
-                <div class="iine">hoge</div>
+                <div class="iine"><span class="heart"></span>hoge</div>
             </div>
         </div>
         <div class="today-sold">売り切れ</div>
