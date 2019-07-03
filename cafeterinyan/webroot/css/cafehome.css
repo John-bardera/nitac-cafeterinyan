@@ -27,12 +27,12 @@ div {
 	width: 50%;
     color: #000;
 }
-.today img {
-    min-height: 80%;
-}
 .today-title {
 	font-size: 10%;
     min-height: 15%;
+}
+.today-img {
+    min-height: 80%;
 }
 .today-sold {
 	visibility: hidden;
