@@ -32,10 +32,12 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('home.css') ?>
     <?= $this->Html->css('cafehome.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 <body class="home">
 
-<header class="row">
+<header class="header">
+
 </header>
 <!--<?php
 
@@ -106,5 +108,6 @@ if ($close_flag){
         <?php } ?>
     </div>
 </div>
+<ion-icon name="heart"></ion-icon>
 </body>
 </html>
