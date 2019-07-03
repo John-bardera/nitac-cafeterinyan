@@ -74,7 +74,7 @@ if ($close_flag){
         <div class="today-title">今日のBセット</div>
         <img src="./img/sample.jpg" class="today-img">
         <div class="iine-wrapper">
-            <div>
+            <div class="iine-box">
                 <div class="iine">hoge</div>
             </div>
         </div>
