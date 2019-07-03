@@ -38,22 +38,23 @@ if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
 
-$id = '0';
+$id = '-1';
 
+/*image*/
 $result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
 $arr = pg_fetch_array($result);
 
 $image = $arr[10];
-$name = $arr[8];
-$price = $arr[9];
-$sold = $arr[2];
-$likes = $arr[4];
+$name = 'null';
+$price = 100;
+$sold = 1;
+$likes = 0;
 $pushSold = 0;
 $pushLikes = 0;
-$energy = $arr[11];
-$protein = $arr[12];
-$lipid = $arr[13];
-$salt = $arr[14];
+$energy = 0;
+$protein = 0;
+$lipid = 0;
+$salt = 0;
 
 $close_flag = pg_close($link);
 ?>
