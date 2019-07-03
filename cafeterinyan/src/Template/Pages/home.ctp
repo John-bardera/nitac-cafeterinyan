@@ -62,15 +62,19 @@ if ($close_flag){
 <div class="todayAB">
     <div class="todayA">
         <div class="today-title">今日のAメニュー</div>
-        <img src="<?php ?>" class="todayA_img">
-        <div class="iine"></div>
-        <div class="todayA_so">売り切れ</div>
+        <img src="../../../webroot/img/sample.jpg" class="todayA_img">
+        <div class="iine-wrapper">
+            <div class="iine">hoge</div>
+        </div>
+        <div class="today-sold">売り切れ</div>
     </div>
     <div class="todayB">
         <div class="today-title">今日のBメニュー</div>
         <img src="<?php ?>" class="todayB_img">
-        <div class="iine"></div>
-        <div class="todayB_so">売り切れ</div>
+        <div class="iine-wrapper">
+            <div class="iine">hoge</div>
+        </div>
+        <div class="today-sold">売り切れ</div>
     </div>
 </div>
 <div class="josetsu">

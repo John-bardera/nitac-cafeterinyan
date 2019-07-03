@@ -8,20 +8,32 @@ body {
 div {
 	display: flex;
 }
+.true {
+	visibility: visible;
+}
 .todayAB {
 	flex-direction: row;
 	border: solid 1px #000;
 	height: 25%;
-	width: auto;
+	width: 50%;
 }
-.todayA .todayB {
+.todayA {
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	border-right: solid 1px #000;
+}
+.todayB {
 	justify-content: center;
 	height: 100%;
 	width: 100%;
 }
 .today-title {
 	font-size: 20px;
-
+}
+.today-sold {
+	visibility: hidden;
+	position: fixed;
 }
 .josetsu {
 
