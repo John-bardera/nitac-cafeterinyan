@@ -18,15 +18,19 @@ div {
 	width: 100%;
 }
 .todayA {
+    flex-direction: column;
 	justify-content: center;
 	height: 100%;
 	width: 50%;
 	border-right: solid 1px #000;
+    color: #ffffff;
 }
 .todayB {
+    flex-direction: column;
 	justify-content: center;
 	height: 100%;
 	width: 50%;
+    color: #000;
 }
 .today-title {
 	font-size: 20px;
@@ -36,4 +40,11 @@ div {
 	position: fixed;
 }
 .iine-wrapper {
+    position: fixed;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+}
+.iine {
+    margin: auto 0 0 auto;
 }

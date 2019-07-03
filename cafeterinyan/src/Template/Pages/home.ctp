@@ -61,7 +61,7 @@ if ($close_flag){
 ?>-->
 <div class="todayAB">
     <div class="todayA">
-        <div class="today-title">今日のAメニュー</div>
+        <div class="today-title">今日のAセット</div>
         <img src="./img/sample.jpg" class="todayA_img">
         <div class="iine-wrapper">
             <div class="iine">hoge</div>
@@ -69,7 +69,7 @@ if ($close_flag){
         <div class="today-sold">売り切れ</div>
     </div>
     <div class="todayB">
-        <div class="today-title">今日のBメニュー</div>
+        <div class="today-title">今日のBセット</div>
         <img src="./img/sample.jpg" class="todayB_img">
         <div class="iine-wrapper">
             <div class="iine">hoge</div>
