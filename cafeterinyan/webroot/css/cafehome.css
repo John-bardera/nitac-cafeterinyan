@@ -15,18 +15,18 @@ div {
 	flex-direction: row;
 	border: solid 1px #000;
 	height: 25%;
-	width: 50%;
+	width: 100%;
 }
 .todayA {
 	justify-content: center;
 	height: 100%;
-	width: 100%;
+	width: 50%;
 	border-right: solid 1px #000;
 }
 .todayB {
 	justify-content: center;
 	height: 100%;
-	width: 100%;
+	width: 50%;
 }
 .today-title {
 	font-size: 20px;
@@ -35,6 +35,5 @@ div {
 	visibility: hidden;
 	position: fixed;
 }
-.josetsu {
-
+.iine-wrapper {
 }

@@ -62,7 +62,7 @@ if ($close_flag){
 <div class="todayAB">
     <div class="todayA">
         <div class="today-title">今日のAメニュー</div>
-        <img src="../../../webroot/img/sample.jpg" class="todayA_img">
+        <img src="./img/sample.jpg" class="todayA_img">
         <div class="iine-wrapper">
             <div class="iine">hoge</div>
         </div>
@@ -70,7 +70,7 @@ if ($close_flag){
     </div>
     <div class="todayB">
         <div class="today-title">今日のBメニュー</div>
-        <img src="<?php ?>" class="todayB_img">
+        <img src="./img/sample.jpg" class="todayB_img">
         <div class="iine-wrapper">
             <div class="iine">hoge</div>
         </div>
