@@ -18,22 +18,21 @@ div {
 	width: 100%;
 }
 .todayA {
-    flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	width: 50%;
 	border-right: solid 1px #000;
-    color: #ffffff;
 }
-.todayB {
+.today {
     flex-direction: column;
 	justify-content: center;
 	height: 100%;
 	width: 50%;
     color: #000;
 }
+.today img {
+    min-height: 80%;
+}
 .today-title {
-	font-size: 20px;
+	font-size: 10%;
+    min-height: 15%;
 }
 .today-sold {
 	visibility: hidden;
@@ -42,7 +41,7 @@ div {
 .iine-wrapper {
     position: fixed;
     z-index: 100;
-    height: 100%;
+    height: 25%;
     width: 100%;
 }
 .iine {
