@@ -75,7 +75,7 @@ $arr = pg_fetch_array($result);
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
+        <a onclick="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
             <img src="<?php echo $tbbrr[1] ?>" class="today-img">
         </a>
         <div class="iine-wrapper">
