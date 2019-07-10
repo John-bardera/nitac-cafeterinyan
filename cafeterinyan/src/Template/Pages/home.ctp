@@ -54,6 +54,10 @@ $arr = pg_fetch_array($result);
 ?>
 
 <div><?php echo $arr[0]; ?></div>
+<div class="todayAB-title-wrapper">
+    <div class="todayAB-title">今日のAセット</div>
+    <div class="todayAB-title">今日のBセット</div>
+</div>
 <div class="todayAB">
     <div class="today todayA">
         <?php

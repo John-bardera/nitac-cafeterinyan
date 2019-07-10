@@ -20,6 +20,14 @@ a {
 .true {
 	visibility: visible;
 }
+.todayAB-title-wrapper {
+    flex-direction: row;
+    width: 100%;
+}
+.todayAB-title {
+    font-size: 24px;
+    width: 50%;
+}
 .todayAB {
 	flex-direction: row;
 	border: solid 1px #000;
