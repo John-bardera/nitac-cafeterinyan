@@ -1,4 +1,4 @@
-<?php
+<?php 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;
@@ -16,7 +16,6 @@ endif;
 
 $cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,5 +37,20 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <a href=""></a>
 
 </header>
+
+<body>
+    <!-- typeの後にoneclick = "url"(urlは任意)と記述することでクリックイベントの設定 -->
+    <button type="button"> × </button>
+    <img src="https://photos.app.goo.gl/aZKHJHqrDTA65cwd8">
+    <t1>メニュー名</t1><button type="button">超いいね</button><button type="button">売り切れ</button>
+    <table border="1"width="90%">
+        <tr>
+            <th width = "30%">値段</th> <th width = "70%">１００円</th>
+            <th>エネルギー</th> <th>１００kcal</th>
+            <th>タンパク質</th> <th>１００g</th>
+            <th>脂質</th> <th>100g</th>
+            <th>塩分</th> <th>2g</th>
+        </tr>
+    </table>
 </body>
 </html>

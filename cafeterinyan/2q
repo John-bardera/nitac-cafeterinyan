@@ -38,34 +38,33 @@ if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
 
-$id = $_GET['id'];
+$id = '-1';
 
+/*image*/
 $result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
 $arr = pg_fetch_array($result);
 
 $image = $arr[10];
-$name = $arr[8];
-$price = $arr[9];
-$sold = $arr[2];
-$likes = $arr[4];
+$name = 'null';
+$price = 100;
+$sold = 1;
+$likes = 0;
 $pushSold = 0;
-$pushLikes = 1114;
-$energy = $arr[11];
-$protein = $arr[12];
-$lipid = $arr[13];
-$salt = $arr[14];
+$pushLikes = 0;
+$energy = 0;
+$protein = 0;
+$lipid = 0;
+$salt = 0;
 
 $close_flag = pg_close($link);
-
-
 ?>
 <body>
-    <!-- typeの後にonclick = "url"(urlは任意)と記述することでクリックイベントの設定 -->
-    <button type="submit"> × </button> <br>
+    <!-- typeの後にoneclick = "url"(urlは任意)と記述することでクリックイベントの設定 -->
+    <button type="button"> × </button> <br>
     <img src=<?php echo $image;?> weight = width> <br>
     <t1><?php echo $name?></t1> 
-    <button type="button" onclick="pushLikes(<?php echo $pushLikes?>)">超いいね</button>
-    <button type="submit">販売状況<br> <?php if($sold == 0){echo '売り切れ';}else{echo '販売中';}?></button>
+    <button type="button">超いいね<br> <?php echo $likes;?></button>
+    <button type="button">販売状況<br> <?php if($sold == 0){echo '売り切れ';}else{echo '販売中';}?></button>
     <table border="1"width="90%">
         <tr>
             <th width = "30%">値段</th> <th width = "70%"><?php echo $price;?>円</th> <br>
@@ -82,11 +81,6 @@ $close_flag = pg_close($link);
             <th>塩分</th> <th><?php echo $salt;?>g</th> <br>
         </tr>
     </table>
-    <script>
-    function pushLikes(pushLkes){
-       alert(pushLikes);
-    }
-    </script>
 </body>
 </html>
 
