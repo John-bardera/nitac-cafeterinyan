@@ -62,7 +62,8 @@ $arr = pg_fetch_array($result);
         ?>
         <div class="today-title"><?php echo $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img">
-        <div href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>" class="iine-wrapper">
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>"></a>
+        <div class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
@@ -75,9 +76,8 @@ $arr = pg_fetch_array($result);
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
-        <a onclick="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
-            <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-        </a>
+        <img src="<?php echo $tbbrr[1] ?>" class="today-img">
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
