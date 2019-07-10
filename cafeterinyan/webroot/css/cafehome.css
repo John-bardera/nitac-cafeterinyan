@@ -15,13 +15,11 @@ div {
 }
 .todayAB {
 	flex-direction: row;
+	border: solid 1px #000;
 	height: 25%;
     width: 100%;
 }
-.today-content-wrapper {
-    border: solid 1px #000;
-}
-.today-content-wrapperA {
+.todayA {
 	border-right: solid 1px #000;
 }
 .today {
@@ -33,11 +31,6 @@ div {
 }
 .today-title {
 	font-size: 20px;
-    min-height: 15%;
-    margin: 0 auto;
-}
-.today-name {
-    font-size: 16px;
     min-height: 15%;
     margin: 0 auto;
 }

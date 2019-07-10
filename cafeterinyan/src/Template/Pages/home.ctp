@@ -55,43 +55,37 @@ $arr = pg_fetch_array($result);
 
 <div><?php echo $arr[0]; ?></div>
 <div class="todayAB">
-    <div class="today">
-        <div class="today-title">今日のAセット</div>
-        <div class="today-content-wrapper today-content-wrapperA">
-            <?php
-                $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
-                $taarr = pg_fetch_array($ta);
-            ?>
-            <div class="today-name"><?php echo $taarr[0] ?></div>
-            <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>">
-                <img src="<?php echo $taarr[1] ?>" class="today-img">
-            </a>
-            <div class="iine-wrapper">
-                <div class="iine-box">
-                    <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
-                </div>
+    <div class="today todayA">
+        <?php
+            $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
+            $taarr = pg_fetch_array($ta);
+        ?>
+        <div class="today-title"><?php echo $taarr[0] ?></div>
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>">
+            <img src="<?php echo $taarr[1] ?>" class="today-img">
+        </a>
+        <div class="iine-wrapper">
+            <div class="iine-box">
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
-            <div class="today-sold">売り切れ</div>
         </div>
+	    <div class="today-sold">売り切れ</div>
     </div>
     <div class="today">
-        <div class="today-title">今日のBセット</div>
-        <div class="today-content-wrapper">
-            <?php
-                $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
-                $tbbrr = pg_fetch_array($tb);
-            ?>
-            <div class="today-name"><?php echo $tbbrr[0] ?></div>
-            <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
-                <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-            </a>
-            <div class="iine-wrapper">
-                <div class="iine-box">
-                    <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
-                </div>
+        <?php
+            $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
+            $tbbrr = pg_fetch_array($tb);
+        ?>
+        <div class="today-title"><?php echo $tbbrr[0] ?></div>
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
+            <img src="<?php echo $tbbrr[1] ?>" class="today-img">
+        </a>
+        <div class="iine-wrapper">
+            <div class="iine-box">
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
-            <div class="today-sold">売り切れ</div>
         </div>
+        <div class="today-sold">売り切れ</div>
     </div>
 </div>
 <div class="josetsu">
