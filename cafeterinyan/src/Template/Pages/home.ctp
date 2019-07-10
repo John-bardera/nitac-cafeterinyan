@@ -7,6 +7,7 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
+echo $this->Html->css('home');
 
 if (!Configure::read('debug')):
     throw new NotFoundException(
@@ -30,14 +31,11 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('home.css') ?>
-    <?= $this->Html->css('cafehome.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 <body class="home">
 
-<header class="header">
-
+<header class="row">
 </header>
 <?php
 
@@ -53,6 +51,20 @@ $result = pg_query_params($link, 'SELECT image FROM menu_info WHERE id = $1', ar
 $arr = pg_fetch_array($result);
 ?>
 
+<?php
+    $port = $_SERVER['SERVER_PORT'];
+?>
+
+<?php
+    $checkjosetsu = pg_query_params($link, 'SELECT id, date, likes FROM daily_menu WHERE id >= 50 AND id <=57', array());
+    for($cjs = pg_fetch_array($checkjosetsu); $cjs != NULL; $cjs = pg_fetch_array($checkjosetsu)) {
+        if($cjs[1] != array(date("Y-m-d"))){
+            $setd = sprintf("UPDATE daily_menu SET date = '%s',sold = %d WHERE id = %d", date("Y-m-d"), 1, $cjs[0]);
+            pg_query($link, $setd);
+        }
+    }
+?>
+
 <div><?php echo $arr[0]; ?></div>
 <div class="todayAB-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
@@ -61,12 +73,12 @@ $arr = pg_fetch_array($result);
 <div class="todayAB">
     <div class="today todayA">
         <?php
-            $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
+            $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
             $taarr = pg_fetch_array($ta);
         ?>
         <div class="today-title"><?php echo $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img">
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>"></a>
+        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
@@ -76,12 +88,12 @@ $arr = pg_fetch_array($result);
     </div>
     <div class="today">
         <?php
-            $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
+            $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
         <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>"></a>
+        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
@@ -93,13 +105,13 @@ $arr = pg_fetch_array($result);
 <div class="josetsu">
     常設メニュー
     <?php
-        $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
+        $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
     ?>
     <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
-	<div class="josetsu-name"><?php echo $jo[0] ?></div>
-        <img src="<?php echo $jo[1] ?>" class="josetsu-img">
+	<div class="josetsu_name"><?php echo $jo[0] ?></div>
+        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="josetsu_img"></a>
         <div class="iine"><?php echo $jo[2] ?></div>
-        <div class="josetsu-so">売り切れ</div>
+        <div class="josetsu_so">売り切れ</div>
     <?php } ?>
 </div>
 <div class="weeklyAB">
@@ -109,14 +121,15 @@ $arr = pg_fetch_array($result);
             <?php
                 $time_passed['send_time'] = $i;
                 $time = "+" . $time_passed['send_time'] . "day";
-                $wa = pg_query_params($link, 'SELECT name, image likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
+                $wa = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                 $wawa = pg_fetch_array($wa);
             ?>
-            <div class="weeklyA-name"><?php echo $wawa[0] ?></div>
-            <img src="<?php echo $wawa[1] ?>" class="weeklyA-img">
+            <div class="weeklyA_name"><?php echo $wawa[0] ?></div>
+            <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
+                <img src="<?php echo $wawa[1] ?>" class="weeklyA_img">
+            </a>
             <div class="iine"><?php echo $wawa[2] ?></div>
-            <div class="weeklyA-so">売り切れ</div>
-
+            <div class="weeklyA_so">売り切れ</div>
         <?php } ?>
     </div>
     <div class="weeklyB">
@@ -124,13 +137,15 @@ $arr = pg_fetch_array($result);
             <?php
                 $time_passed['send_time'] = $i;
                 $time = "+" . $time_passed['send_time'] . "day";
-                $wb = pg_query_params($link, 'SELECT name, image likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
+                $wb = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
                 $wbwb = pg_fetch_array($wa);
             ?>
             <div class="weeklyB-name"><?php echo $wbwb[0] ?></div>
-            <img src="<?php echo $wbwb[1] ?>" class="weeklyB-img">
+            <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
+                <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
+            </a>
             <div class="iine"><?php echo $wbwb[2] ?></div>
-            <div class="weeklyB-so">売り切れ情報</div>
+            <div class="weeklyB_so">売り切れ情報</div>
         <?php } ?>
     </div>
 </div>
