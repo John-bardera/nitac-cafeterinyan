@@ -56,10 +56,10 @@ div {
 }
 .iine {
     margin: auto 0;
-    font-size: 10px;
+    font-size: 16px;
 }
 .heart {
     color: red;
-    font-size: 30px;
-    margin: 0 7px;
+    font-size: 24px;
+    margin: auto 4px;
 }
