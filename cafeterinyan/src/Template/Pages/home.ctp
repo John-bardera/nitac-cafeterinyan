@@ -61,14 +61,12 @@ $arr = pg_fetch_array($result);
             $taarr = pg_fetch_array($ta);
         ?>
         <div class="today-title"><?php echo $taarr[0] ?></div>
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>">
-            <img src="<?php echo $taarr[1] ?>" class="today-img">
-        </a>
-        <div class="iine-wrapper">
+        <img src="<?php echo $taarr[1] ?>" class="today-img">
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>" class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
-        </div>
+        </a>
 	    <div class="today-sold">売り切れ</div>
     </div>
     <div class="today">
@@ -77,14 +75,12 @@ $arr = pg_fetch_array($result);
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
-            <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-        </a>
-        <div class="iine-wrapper">
+        <img src="<?php echo $tbbrr[1] ?>" class="today-img">
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>" class="iine-wrapper">
             <div class="iine-box">
-                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
-        </div>
+        </a>
         <div class="today-sold">売り切れ</div>
     </div>
 </div>
