@@ -39,7 +39,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <header class="header">
 
 </header>
-<!--<?php
+<?php
 
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
 $link = pg_connect($conn);
@@ -53,85 +53,58 @@ $result = pg_query_params($link, 'SELECT image FROM menu_info WHERE id = $1', ar
 $arr = pg_fetch_array($result);
 ?>
 
-<<<<<<< HEAD
-<?php
-    
-?>
-
 <div><?php echo $arr[0]; ?></div>
 <div class="todayAB">
-    <div class="todayA">
-        <div class="todayA_txt">今日のAメニュー</div>
+    <div class="today todayA">
+        <div class="today-title">今日のAセット</div>
         <?php
             $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
             $taarr = pg_fetch_array($ta);
         ?>
-        <div class="todayA_name"><?php echo $taarr[0] ?></div>
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>"><img src="<?php echo $taarr[1] ?>" class="todayA_img"></a>
-        <div class="iine"><?php echo $taarr[2] ?></div>
-	<div class="todayA_so">売り切れ</div>
+        <div class="todayA-name"><?php echo $taarr[0] ?></div>
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $taarr[3] ?>">
+            <img src="<?php echo $taarr[1] ?>" class="today-img">
+        </a>
+        <div class="iine-wrapper">
+            <div class="iine-box">
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
+            </div>
+        </div>
+	    <div class="today-sold">売り切れ</div>
     </div>
-    <div class="todayB">
-        <div class="todayB_txt">今日のBメニュー</div>
+    <div class="today">
+        <div class="today-title">今日のBセット</div>
         <?php
             $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
             $tbbrr = pg_fetch_array($tb);
         ?>
-        <div class="todayB_name"><?php echo $tbbrr[0] ?></div>
-        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>"><img src="<?php echo $tbbrr[1] ?>" class="todayB_img"></a>
-        <div class="iine"><?php echo $tbbrr[2] ?></div>
-        <div class="todayB_so">売り切れ</div>
-=======
-if ($close_flag){
-    print('切断に成功しました。<br>');
-}
-?>-->
-<div class="todayAB">
-    <div class="today todayA">
-        <div class="today-title">今日のAセット</div>
-        <img src="./img/sample.jpg" class="today-img">
+        <div class="todayB-name"><?php echo $tbbrr[0] ?></div>
+        <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>">
+            <img src="<?php echo $tbbrr[1] ?>" class="today-img">
+        </a>
         <div class="iine-wrapper">
             <div class="iine-box">
-                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon>hoge</div>
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
         </div>
         <div class="today-sold">売り切れ</div>
-    </div>
-    <div class="today">
-        <div class="today-title">今日のBセット</div>
-        <img src="./img/sample.jpg" class="today-img">
-        <div class="iine-wrapper">
-            <div class="iine-box">
-                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon>hoge</div>
-            </div>
-        </div>
-        <div class="today-sold">売り切れ</div>
->>>>>>> john
     </div>
 </div>
 <div class="josetsu">
     常設メニュー
-<<<<<<< HEAD
     <?php
         $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
     ?>
     <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
-	<div class="josetsu_name"><?php echo $jo[0] ?></div>
-        <img src="<?php echo $jo[1] ?>" class="josetsu_img">
+	<div class="josetsu-name"><?php echo $jo[0] ?></div>
+        <img src="<?php echo $jo[1] ?>" class="josetsu-img">
         <div class="iine"><?php echo $jo[2] ?></div>
-        <div class="josetsu_so">売り切れ</div>
-=======
-    <?php for($i = 1; $i <= 10; $i++) { ?>
-        <img src="<?php ?>" class="josetsu-img">
-        <div class="iine"></div>
-        <div class="josetsu-so"></div>
->>>>>>> john
+        <div class="josetsu-so">売り切れ</div>
     <?php } ?>
 </div>
 <div class="weeklyAB">
     今週のメニュー
     <div class="weeklyA">
-<<<<<<< HEAD
         <?php for($i = 1; $i < 5; $i++) { ?>
             <?php
                 $time_passed['send_time'] = $i;
@@ -139,21 +112,15 @@ if ($close_flag){
                 $wa = pg_query_params($link, 'SELECT name, image likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                 $wawa = pg_fetch_array($wa);
             ?>
-            <div class="weeklyA_name"><?php echo $wawa[0] ?></div>
-            <img src="<?php echo $wawa[1] ?>" class="weeklyA_img">
+            <div class="weeklyA-name"><?php echo $wawa[0] ?></div>
+            <img src="<?php echo $wawa[1] ?>" class="weeklyA-img">
             <div class="iine"><?php echo $wawa[2] ?></div>
-            <div class="weeklyA_so">売り切れ</div>
-=======
-        <?php for($i = 1; $i <= 10; $i++) { ?>
-            <img src="<?php ?>" class="weeklyA-img">
-            <div class="iine"></div>
-            <div class="weeklyA-so"></div>
->>>>>>> john
+            <div class="weeklyA-so">売り切れ</div>
+
         <?php } ?>
     </div>
     <div class="weeklyB">
         <?php for($i = 1; $i <= 10; $i++) { ?>
-<<<<<<< HEAD
             <?php
                 $time_passed['send_time'] = $i;
                 $time = "+" . $time_passed['send_time'] . "day";
@@ -161,14 +128,9 @@ if ($close_flag){
                 $wbwb = pg_fetch_array($wa);
             ?>
             <div class="weeklyB-name"><?php echo $wbwb[0] ?></div>
-            <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
+            <img src="<?php echo $wbwb[1] ?>" class="weeklyB-img">
             <div class="iine"><?php echo $wbwb[2] ?></div>
-            <div class="weeklyB_so">売り切れ情報</div>
-=======
-            <img src="<?php ?>" class="weeklyB-img">
-            <div class="iine"></div>
-            <div class="weeklyB-so"></div>
->>>>>>> john
+            <div class="weeklyB-so">売り切れ情報</div>
         <?php } ?>
     </div>
 </div>
