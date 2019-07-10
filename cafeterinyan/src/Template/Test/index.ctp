@@ -38,8 +38,9 @@ if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
 
-$id = $_GET['id'];
-
+if(isset($_GET['id'])){
+  $id = $_GET['id'];
+}
 $result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
 $arr = pg_fetch_array($result);
 
@@ -49,7 +50,15 @@ $price = $arr[9];
 $sold = $arr[2];
 $likes = $arr[4];
 $pushSold = 0;
-$pushLikes = 1114;
+if(isset($_GET['Lsum'])){
+ if($_GET['Lsum'] < 100){
+  $pushLikes = $_GET['Lsum'];
+ }else{
+  $pushLikes = 100;
+ }
+}else{
+$pushLikes = 0;
+}
 $energy = $arr[11];
 $protein = $arr[12];
 $lipid = $arr[13];
@@ -60,11 +69,23 @@ $close_flag = pg_close($link);
 
 ?>
 <body>
-    <!-- typeの後にonclick = "url"(urlは任意)と記述することでクリックイベントの設定 -->
-    <button type="submit"> × </button> <br>
+    <form action='../' method = ''>
+    <input type="button" value = "×" onclick="end()">
+    </form>
     <img src=<?php echo $image;?> weight = width> <br>
-    <t1><?php echo $name?></t1> 
-    <button type="button" onclick="pushLikes(<?php echo $pushLikes?>)">超いいね</button>
+    <t1><?php echo $name;?></t1> 
+    <form action='' method="GET">
+    <input type="hidden" name="id" value="<?php echo $id;?>">
+    <input type="hidden" name="Lsum" value="<?php
+    if($pushLikes < 100){
+      echo $pushLikes+1;
+    }else{
+      echo 100;
+    }
+    ?>" 
+    />
+    <input type="submit" value = "超いいね : <?php echo $likes + $pushLikes?>" />
+    </form>
     <button type="submit">販売状況<br> <?php if($sold == 0){echo '売り切れ';}else{echo '販売中';}?></button>
     <table border="1"width="90%">
         <tr>
@@ -83,8 +104,12 @@ $close_flag = pg_close($link);
         </tr>
     </table>
     <script>
-    function pushLikes(pushLkes){
-       alert(pushLikes);
+    function pushLikes(sum){
+       var url = location.href;
+       alert(url);      
+    }
+    function end(){
+       alert("更新");
     }
     </script>
 </body>
