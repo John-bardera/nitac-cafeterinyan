@@ -7,7 +7,6 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
-echo $this->Html->css('home');
 
 if (!Configure::read('debug')):
     throw new NotFoundException(
@@ -31,13 +30,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('home.css') ?>
+    <?= $this->Html->css('cafehome.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </head>
 <body class="home">
 
-<header class="row">
+<header class="header">
+
 </header>
-<?php
+<!--<?php
 
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
 $link = pg_connect($conn);
@@ -51,6 +53,7 @@ $result = pg_query_params($link, 'SELECT image FROM menu_info WHERE id = $1', ar
 $arr = pg_fetch_array($result);
 ?>
 
+<<<<<<< HEAD
 <?php
     
 ?>
@@ -78,10 +81,37 @@ $arr = pg_fetch_array($result);
         <a href="http://172.16.16.7:8100/test?id=<?php echo $tbbrr[3] ?>"><img src="<?php echo $tbbrr[1] ?>" class="todayB_img"></a>
         <div class="iine"><?php echo $tbbrr[2] ?></div>
         <div class="todayB_so">売り切れ</div>
+=======
+if ($close_flag){
+    print('切断に成功しました。<br>');
+}
+?>-->
+<div class="todayAB">
+    <div class="today todayA">
+        <div class="today-title">今日のAセット</div>
+        <img src="./img/sample.jpg" class="today-img">
+        <div class="iine-wrapper">
+            <div class="iine-box">
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon>hoge</div>
+            </div>
+        </div>
+        <div class="today-sold">売り切れ</div>
+    </div>
+    <div class="today">
+        <div class="today-title">今日のBセット</div>
+        <img src="./img/sample.jpg" class="today-img">
+        <div class="iine-wrapper">
+            <div class="iine-box">
+                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon>hoge</div>
+            </div>
+        </div>
+        <div class="today-sold">売り切れ</div>
+>>>>>>> john
     </div>
 </div>
 <div class="josetsu">
     常設メニュー
+<<<<<<< HEAD
     <?php
         $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
     ?>
@@ -90,11 +120,18 @@ $arr = pg_fetch_array($result);
         <img src="<?php echo $jo[1] ?>" class="josetsu_img">
         <div class="iine"><?php echo $jo[2] ?></div>
         <div class="josetsu_so">売り切れ</div>
+=======
+    <?php for($i = 1; $i <= 10; $i++) { ?>
+        <img src="<?php ?>" class="josetsu-img">
+        <div class="iine"></div>
+        <div class="josetsu-so"></div>
+>>>>>>> john
     <?php } ?>
 </div>
 <div class="weeklyAB">
     今週のメニュー
     <div class="weeklyA">
+<<<<<<< HEAD
         <?php for($i = 1; $i < 5; $i++) { ?>
             <?php
                 $time_passed['send_time'] = $i;
@@ -106,10 +143,17 @@ $arr = pg_fetch_array($result);
             <img src="<?php echo $wawa[1] ?>" class="weeklyA_img">
             <div class="iine"><?php echo $wawa[2] ?></div>
             <div class="weeklyA_so">売り切れ</div>
+=======
+        <?php for($i = 1; $i <= 10; $i++) { ?>
+            <img src="<?php ?>" class="weeklyA-img">
+            <div class="iine"></div>
+            <div class="weeklyA-so"></div>
+>>>>>>> john
         <?php } ?>
     </div>
     <div class="weeklyB">
         <?php for($i = 1; $i <= 10; $i++) { ?>
+<<<<<<< HEAD
             <?php
                 $time_passed['send_time'] = $i;
                 $time = "+" . $time_passed['send_time'] . "day";
@@ -120,6 +164,11 @@ $arr = pg_fetch_array($result);
             <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
             <div class="iine"><?php echo $wbwb[2] ?></div>
             <div class="weeklyB_so">売り切れ情報</div>
+=======
+            <img src="<?php ?>" class="weeklyB-img">
+            <div class="iine"></div>
+            <div class="weeklyB-so"></div>
+>>>>>>> john
         <?php } ?>
     </div>
 </div>
