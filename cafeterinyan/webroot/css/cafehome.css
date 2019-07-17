@@ -11,7 +11,7 @@ div {
 	display: flex;
 }
 a {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     height: 25%;
     width: 50%;
@@ -59,7 +59,7 @@ a {
 	position: fixed;
 }
 .iine-wrapper {
-    position: fixed;
+    position: absolute;
     z-index: 100;
     height: 25%;
     width: 50%;

@@ -80,7 +80,7 @@ if (!$link) {
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>
-	    <div class="today-sold">売り切れ</div>
+	    <div class="today-sold <?php $taarr[4] ? null : print 'sold' ?>">売り切れ</div>
     </div>
     <div class="today">
         <?php
@@ -95,7 +95,7 @@ if (!$link) {
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
         </div>
-        <div class="today-sold">売り切れ</div>
+        <div class="today-sold <?php $tbbrr[4] ? null : print 'sold' ?>">売り切れ</div>
     </div>
 </div>
 <div class="josetsu">
