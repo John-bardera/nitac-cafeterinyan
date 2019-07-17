@@ -46,11 +46,6 @@ $link = pg_connect($conn);
 if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
-
-print('接続に成功しました。<br>');
-
-$result = pg_query_params($link, 'SELECT image FROM menu_info WHERE id = $1', array("-1"));
-$arr = pg_fetch_array($result);
 ?>
 
 <?php
@@ -67,7 +62,6 @@ $arr = pg_fetch_array($result);
     }
 ?>
 
-<div><?php echo $arr[0]; ?></div>
 <div class="todayAB-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
     <div class="todayAB-title">今日のBセット</div>
@@ -115,6 +109,17 @@ $arr = pg_fetch_array($result);
         <div class="iine"><?php echo $jo[2] ?></div>
         <div class="josetsu_so">売り切れ</div>
     <?php } ?>
+    <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
+        <?php
+            $kjs = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type =3 ', array(date("Y-m-d")));
+        ?>
+        <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
+            <div class="josetsu_name"><?php echo $kjo[0] ?></div>
+            <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="josetsu_img"></a>
+            <div class="iine"><?php echo $kjo[2] ?></div>
+            <div class="josetsu_so">売り切れ</div>
+        <?php } ?>
+    <?php } ?>
 </div>
 <div class="weeklyAB">
     今週のメニュー
@@ -147,7 +152,7 @@ $arr = pg_fetch_array($result);
                 <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
             </a>
             <div class="iine"><?php echo $wbwb[2] ?></div>
-            <div class="weeklyB_so">売り切れ情報</div>
+            <div class="weeklyB_so">売り切れ</div>
         <?php } ?>
     </div>
 </div>
@@ -157,8 +162,4 @@ $arr = pg_fetch_array($result);
 <?php
 // PostgreSQLに対する処理
 $close_flag = pg_close($link);
-
-if ($close_flag){
-    print('切断に成功しました。<br>');
-}
 ?>
