@@ -40,6 +40,8 @@ if (!$link) {
 
 if(isset($_GET['id'])){
   $id = $_GET['id'];
+}else{
+ $id = -1;
 }
 $result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
 $arr = pg_fetch_array($result);
@@ -49,44 +51,88 @@ $name = $arr[8];
 $price = $arr[9];
 $sold = $arr[2];
 $likes = $arr[4];
-$pushSold = 0;
 if(isset($_GET['Lsum'])){
  if($_GET['Lsum'] < 100){
-  $pushLikes = $_GET['Lsum'];
+  $pushLikes = (int)$_GET['Lsum'];
  }else{
   $pushLikes = 100;
  }
 }else{
 $pushLikes = 0;
 }
+if(isset($_GET['Sold'])){
+ if($_GET['Sold'] == 1){
+  $pushSold = (int)$_GET['Sold'];
+ }else{
+  $pushSold = 0;
+ }
+}else{
+$pushSold = 0;
+}
+
 $energy = $arr[11];
 $protein = $arr[12];
 $lipid = $arr[13];
 $salt = $arr[14];
 
+
 $close_flag = pg_close($link);
 
 
+function Update($id,$pushLikes,$pushSold){
+$conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
+$link = pg_connect($conn);
+if (!$link) {
+    die('接続失敗です。'.pg_last_error());
+}
+$result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
+$arr = pg_fetch_array($result);
+
+$sold = $arr[2];
+$likes = $arr[4];
+
+if(($sold - $pushSold) == 0){
+  $temp = 0;
+}else{
+  $temp = 1;
+}
+$update = sprintf("UPDATE daily_menu SET sold = %d,likes = %d",$temp,$likes+$pushLikes);
+pg_query($link,$update);
+
+$close_flag = pg_close($link);
+}
+
+if(isset($_GET['update'])){
+  if($_GET['update'] == "0asdfnmasdfkasdfo9fsd"){
+    Update($id,$pushLikes,$pushSold);
+    header("Location: ../");
+    exit;
+  }
+}
 ?>
 <body>
-    <form action='../' method = ''>
-    <input type="button" value = "×" onclick="end()">
+    <form action='' method = 'GET'>
+    <input type="hidden" name="id" value="<?php echo $id;?>"/>
+    <input type="hidden" name="Lsum" value="<?php echo $pushLikes;?>"/>
+    <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
+    <input type="hidden" name="update" value="0asdfnmasdfkasdfo9fsd">
+    <input type="submit" value = "×">
     </form>
     <img src=<?php echo $image;?> weight = width> <br>
     <t1><?php echo $name;?></t1> 
-    <form action='' method="GET">
-    <input type="hidden" name="id" value="<?php echo $id;?>">
-    <input type="hidden" name="Lsum" value="<?php
-    if($pushLikes < 100){
-      echo $pushLikes+1;
-    }else{
-      echo 100;
-    }
-    ?>" 
-    />
-    <input type="submit" value = "超いいね : <?php echo $likes + $pushLikes?>" />
+    <form action='' method='GET'>
+    <input type="hidden" name="id" value="<?php echo $id;?>"/>
+    <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
+    <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
+    <input type="submit" value = "超いいね : <?php echo $likes + $pushLikes;?>"/>
     </form>
-    <button type="submit">販売状況<br> <?php if($sold == 0){echo '売り切れ';}else{echo '販売中';}?></button>
+
+    <form action='' method = 'GET'>
+    <input type="hidden" name="id" value="<?php echo $id;?>">
+    <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />    
+    <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
+    <input type="submit" value = "販売状況 : <?php if(($sold - $pushSold) == 0){echo '売り切れ中';}else{echo '販売中';}?>"/>
+    </form>
     <table border="1"width="90%">
         <tr>
             <th width = "30%">値段</th> <th width = "70%"><?php echo $price;?>円</th> <br>
@@ -103,15 +149,6 @@ $close_flag = pg_close($link);
             <th>塩分</th> <th><?php echo $salt;?>g</th> <br>
         </tr>
     </table>
-    <script>
-    function pushLikes(sum){
-       var url = location.href;
-       alert(url);      
-    }
-    function end(){
-       alert("更新");
-    }
-    </script>
 </body>
 </html>
 
