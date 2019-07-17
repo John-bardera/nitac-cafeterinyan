@@ -76,7 +76,7 @@ if (!$link) {
         <img src="<?php echo $taarr[1] ?>" class="today-img">
         <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper">
-            <div class="iine-box">
+            <div class="iine-box iine-box-right">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>

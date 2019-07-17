@@ -1,11 +1,10 @@
 html {
-    width: fit-content;
-}
-header {
+    overflow: hidden;
 }
 body {
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    justify-content: center;
 	overflow: hidden;
 	height: 100%;
 	width: 100%;
@@ -77,6 +76,9 @@ a {
     border-bottom: solid 1px #000;
     height: 32px;
     width: 80px;
+}
+.iine-box-right {
+    border-right: solid 1px #000;
 }
 .iine {
     margin: auto 0;
