@@ -46,6 +46,7 @@ $link = pg_connect($conn);
 if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
+$hogehogenyan = '2019-07-24'
 ?>
 
 <?php
@@ -69,12 +70,12 @@ if (!$link) {
 <div class="todayAB">
     <div class="today todayA">
         <?php
-            $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d")));
+            $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array($hogehogenyan));//date("Y-m-d")));
             $taarr = pg_fetch_array($ta);
         ?>
         <div class="today-title"><?php echo $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img">
-        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
+        <a class="today-link" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper">
             <div class="iine-box iine-box-right">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
@@ -86,12 +87,12 @@ if (!$link) {
     </div>
     <div class="today">
         <?php
-            $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d")));
+            $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array($hogehogenyan));//date("Y-m-d")));
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
         <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
+        <a class="today-link" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
@@ -112,22 +113,26 @@ if (!$link) {
                 $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
             ?>
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
-                <div class="josetsu-name"><?php echo $jo[0] ?></div>
-                <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="josetsu_img"></a>
-                <div class="iine"><?php echo $jo[2] ?></div>
-                <div class="josetsu_so">売り切れ</div>
+                <div class="josetsu-content">
+                    <div class="josetsu-name"><?php echo $jo[0] ?></div>
+                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="josetsu_img"></a>
+                    <div class="iine"><?php echo $jo[2] ?></div>
+                    <div class="josetsu_so">売り切れ</div>
+                </div>
             <?php } ?>
         </div>
         <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
             <div class="jyosetu-content-under">
                 <?php
-                    $kjs = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type =3 ', array(date("Y-m-d")));
+                    $kjs = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 3 ', array(date("Y-m-d")));
                 ?>
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
-                    <div class="josetsu-name"><?php echo $kjo[0] ?></div>
-                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="josetsu_img"></a>
-                    <div class="iine"><?php echo $kjo[2] ?></div>
-                    <div class="josetsu_so">売り切れ</div>
+                    <div class="josetsu-content">
+                        <div class="josetsu-name"><?php echo $kjo[0] ?></div>
+                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="josetsu_img"></a>
+                        <div class="iine"><?php echo $kjo[2] ?></div>
+                        <div class="josetsu_so">売り切れ</div>
+                    </div>
                 <?php } ?>
             </div>
         <?php } ?>
