@@ -1,3 +1,7 @@
+html {
+    width: fit-content;
+    height: fit-content;
+}
 header {
 }
 body {
@@ -11,7 +15,7 @@ div {
 	display: flex;
 }
 a {
-    position: absolute;
+    position: fixed;
     z-index: 100;
     height: 25%;
     width: 50%;
@@ -56,7 +60,7 @@ a {
     min-height: 85%;
 }
 .iine-wrapper {
-    position: absolute;
+    position: fixed;
     z-index: 100;
     height: 25%;
     width: 50%;
@@ -98,4 +102,7 @@ a {
 }
 .sold {
     visibility: visible;
+}
+.gray-filter {
+    filter: graysclae(50%);
 }
