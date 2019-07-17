@@ -112,23 +112,25 @@ div {
 .josetsu,.weeklyAB {
     display: flex;
     flex-direction: column;
+    min-height: 25%;
 }
 .title-wrapper {
     width: 100%;
     display: block;
     text-align: center;
 }
-.josetsu-content-wrapper {
+.josetsu-content-wrapper, .weekly-content-wrapper {
     border: solid 1px #000;
-    flex-direction: column
+    flex-direction: column;
+    height: 25%;
 }
-.josetsu-content-upper,.josetsu-content-under {
+.josetsu-content-upper, .josetsu-content-under {
     flex-direction: row;
     width: 25%;
-    height: 10%;
-    max-height: 10%;
+    height: 50%;
     border-bottom: solid 1px #000;
 }
 .josetsu-content {
     border-right: solid 1px #000;
+    overflow: hidden;
 }
