@@ -19,9 +19,6 @@ a {
     width: 50%;
     z-index: 2000000000000000;
 }
-.true {
-	visibility: visible;
-}
 .today-title-wrapper {
     flex-direction: row;
     width: 100%;
@@ -120,4 +117,13 @@ a {
     width: 100%;
     display: block;
     text-align: center;
+}
+.josetsu-content-wrapper {
+    border: solid 1px #000;
+    flex-direction: column
+}
+.josetsu-content-upper,.josetsu-content-under {
+    flex-direction: row;
+    width: 25%;
+    height: 10%;
 }
