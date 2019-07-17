@@ -108,7 +108,7 @@ $hogehogenyan = '2019-07-24'
         <div class="single-title">常設メニュー</div>
     </div>
     <div class="josetsu-content-wrapper">
-        <div class="jyosetu-content-upper">
+        <div class="josetu-content-upper">
             <?php
                 $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
             ?>
@@ -122,7 +122,7 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
-            <div class="jyosetu-content-under">
+            <div class="josetu-content-under">
                 <?php
                     $kjs = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 3 ', array(date("Y-m-d")));
                 ?>
