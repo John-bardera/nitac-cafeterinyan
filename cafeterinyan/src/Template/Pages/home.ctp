@@ -80,7 +80,7 @@ if (!$link) {
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>
-        <div class="sold-wrapper <?php $tbbrr[4] ? null : print 'gray-filter' ?>">
+        <div class="sold-wrapper <?php $taarr[4] ? null : print 'gray-filter' ?>">
 	        <div class="today-sold <?php $taarr[4] ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
