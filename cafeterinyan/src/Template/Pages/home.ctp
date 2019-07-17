@@ -56,13 +56,12 @@ $hogehogenyan = '2019-07-24'
 <?php
     $checkjosetsu = pg_query_params($link, 'SELECT id, date, likes FROM daily_menu WHERE id >= 50 AND id <=57', array());
     for($cjs = pg_fetch_array($checkjosetsu); $cjs != NULL; $cjs = pg_fetch_array($checkjosetsu)) {
-        if($cjs[1] != array(date("Y-m-d"))){
+        if($cjs[1] != date("Y-m-d")){
             $setd = sprintf("UPDATE daily_menu SET date = '%s',sold = %d WHERE id = %d", date("Y-m-d"), 1, $cjs[0]);
             pg_query($link, $setd);
         }
     }
 ?>
-
 <div class="today-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
     <div class="todayAB-title">今日のBセット</div>
@@ -146,7 +145,7 @@ $hogehogenyan = '2019-07-24'
         <div class="weeklyA">
             <?php for($i = 1; $i < 5; $i++) { ?>
                 <?php
-                    $time_passed['send_time'] = $i + 7;
+                    $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . "day";
                     $wa = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                     $wawa = pg_fetch_array($wa);
@@ -160,9 +159,9 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <div class="weeklyB">
-            <?php for($i = 1; $i <= 10; $i++) { ?>
+            <?php for($i = 1; $i < 5; $i++) { ?>
                 <?php
-                    $time_passed['send_time'] = $i + 7;
+                    $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . "day";
                     $wb = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
                     $wbwb = pg_fetch_array($wa);
