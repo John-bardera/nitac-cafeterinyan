@@ -22,7 +22,7 @@ a {
 .true {
 	visibility: visible;
 }
-.title-wrapper {
+.today-title-wrapper {
     flex-direction: row;
     width: 100%;
 }
@@ -111,4 +111,8 @@ a {
 }
 .gray-filter {
     filter: graysclae(50%);
+}
+.josetsu,.weeklyAB {
+    display: flex;
+    flex-direction: column;
 }

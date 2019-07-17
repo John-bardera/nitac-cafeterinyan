@@ -62,7 +62,7 @@ if (!$link) {
     }
 ?>
 
-<div class="title-wrapper">
+<div class="today-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
     <div class="todayAB-title">今日のBセット</div>
 </div>
