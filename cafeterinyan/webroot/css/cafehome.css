@@ -54,10 +54,6 @@ a {
 .today-img {
     min-height: 85%;
 }
-.today-sold {
-	visibility: hidden;
-	position: fixed;
-}
 .iine-wrapper {
     position: absolute;
     z-index: 100;
@@ -67,7 +63,8 @@ a {
 .iine-box {
     margin: auto 1px 1px auto;
     background-color: #ffffff;
-    border: solid 1px #000;
+    border-top: solid 1px #000;
+    border-left: solid 1px #000;
     height: 32px;
     width: 80px;
 }
@@ -79,4 +76,21 @@ a {
     color: red;
     font-size: 24px;
     margin: auto 4px;
+}
+.sold-wrapper {
+    position: absolute;
+    z-index: 110;
+    height: 25px;
+    width: 50%;
+}
+.today-sold {
+	visibility: hidden;
+    position: fixed;
+    opacity: 0;
+}
+.sold {
+    visibility: visible;
+    background-color: red;
+    margin: 20px;
+    transform: rotate3d(40deg);
 }

@@ -95,7 +95,9 @@ if (!$link) {
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
         </div>
-        <div class="today-sold <?php $tbbrr[4] ? null : print 'sold' ?>">売り切れ</div>
+        <div class="sold-wrapper">
+            <div class="today-sold <?php $tbbrr[4] ? null : print 'sold' ?>">売り切れ</div>
+        </div>
     </div>
 </div>
 <div class="josetsu">
