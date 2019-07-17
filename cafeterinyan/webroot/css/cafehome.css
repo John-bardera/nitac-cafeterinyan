@@ -116,3 +116,8 @@ a {
     display: flex;
     flex-direction: column;
 }
+.title-wrapper {
+    width: 100%;
+    display: block;
+    text-align: center;
+}
