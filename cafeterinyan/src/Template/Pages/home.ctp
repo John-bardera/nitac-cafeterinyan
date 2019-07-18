@@ -71,7 +71,7 @@ $hogehogenyan = '2019-07-24'
         <img src="<?php echo $taarr[1] ?>" class="today-img">
         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
-            <div class="iine-box iine-box-right">
+            <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>
@@ -111,7 +111,9 @@ $hogehogenyan = '2019-07-24'
                     <div class="josetsu-name"><?php echo $jo[0] ?></div>
                     <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="josetsu_img"></a>
                     <div class="iine"><?php echo $jo[2] ?></div>
-                    <div class="josetsu_so">売り切れ</div>
+                    <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
+                        <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                    </div>
                 </div>
             <?php } ?>
         </div>
@@ -125,7 +127,9 @@ $hogehogenyan = '2019-07-24'
                         <div class="josetsu-name"><?php echo $kjo[0] ?></div>
                         <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="josetsu_img"></a>
                         <div class="iine"><?php echo $kjo[2] ?></div>
-                        <div class="josetsu_so">売り切れ</div>
+                        <div class="sold-wrapper cover-content <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>">
+                            <div class="other-sold <?php $kjo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                        </div>
                     </div>
                 <?php } ?>
             </div>
@@ -150,7 +154,9 @@ $hogehogenyan = '2019-07-24'
                     <img src="<?php echo $wawa[1] ?>" class="weeklyA_img">
                 </a>
                 <div class="iine"><?php echo $wawa[2] ?></div>
-                <div class="weeklyA_so">売り切れ</div>
+                <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
+                    <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                </div>
             <?php } ?>
         </div>
         <div class="weeklyB">
@@ -166,7 +172,9 @@ $hogehogenyan = '2019-07-24'
                     <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
                 </a>
                 <div class="iine"><?php echo $wbwb[2] ?></div>
-                <div class="weeklyB_so">売り切れ</div>
+                <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
+                    <div class="other-sold <?php $wb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                </div>
             <?php } ?>
         </div>
     </div>
