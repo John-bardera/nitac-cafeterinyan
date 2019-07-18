@@ -39,7 +39,7 @@ if (!$link) {
 }
 
 if(isset($_GET['id'])){
-  $id = $_GET['id'];
+  $id = (int)$_GET['id'];
 }else{
  $id = -1;
 }
@@ -96,7 +96,7 @@ if(($sold - $pushSold) == 0){
 }else{
   $temp = 1;
 }
-$update = sprintf("UPDATE daily_menu SET sold = %d,likes = %d",$temp,$likes+$pushLikes);
+$update = sprintf("UPDATE daily_menu SET sold = %d,likes = %d WHERE id=%d",$temp,$likes+$pushLikes,$id);
 pg_query($link,$update);
 
 $close_flag = pg_close($link);
