@@ -7,7 +7,7 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
-echo $this->Html->css('home');
+echo $this->Html->css(['cafehome', 'home', 'base', 'style']);
 
 if (!Configure::read('debug')):
     throw new NotFoundException(
@@ -36,7 +36,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body class="home">
-
 <header class="row">
 </header>
 <?php
@@ -56,13 +55,12 @@ $hogehogenyan = '2019-07-24'
 <?php
     $checkjosetsu = pg_query_params($link, 'SELECT id, date, likes FROM daily_menu WHERE id >= 50 AND id <=57', array());
     for($cjs = pg_fetch_array($checkjosetsu); $cjs != NULL; $cjs = pg_fetch_array($checkjosetsu)) {
-        if($cjs[1] != array(date("Y-m-d"))){
+        if($cjs[1] != date("Y-m-d")){
             $setd = sprintf("UPDATE daily_menu SET date = '%s',sold = %d WHERE id = %d", date("Y-m-d"), 1, $cjs[0]);
             pg_query($link, $setd);
         }
     }
 ?>
-
 <div class="today-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
     <div class="todayAB-title">今日のBセット</div>
@@ -81,8 +79,8 @@ $hogehogenyan = '2019-07-24'
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>
-        <div class="sold-wrapper <?php $taarr[4] ? null : print 'gray-filter' ?>">
-	        <div class="today-sold <?php $taarr[4] ? null : print 'sold' ?>">売り切れ</div>
+        <div class="sold-wrapper <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
+	        <div class="today-sold <?php $taarr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
     <div class="today">
@@ -98,8 +96,8 @@ $hogehogenyan = '2019-07-24'
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
         </div>
-        <div class="sold-wrapper <?php $tbbrr[4] ? null : print 'gray-filter' ?>">
-            <div class="today-sold <?php $tbbrr[4] ? null : print 'sold' ?>">売り切れ</div>
+        <div class="sold-wrapper <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
+            <div class="today-sold <?php $tbbrr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
 </div>
@@ -146,7 +144,7 @@ $hogehogenyan = '2019-07-24'
         <div class="weeklyA">
             <?php for($i = 1; $i < 5; $i++) { ?>
                 <?php
-                    $time_passed['send_time'] = $i + 7;
+                    $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . "day";
                     $wa = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                     $wawa = pg_fetch_array($wa);
@@ -160,9 +158,9 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <div class="weeklyB">
-            <?php for($i = 1; $i <= 10; $i++) { ?>
+            <?php for($i = 1; $i < 5; $i++) { ?>
                 <?php
-                    $time_passed['send_time'] = $i + 7;
+                    $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . "day";
                     $wb = pg_query_params($link, 'SELECT name, image likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
                     $wbwb = pg_fetch_array($wa);
