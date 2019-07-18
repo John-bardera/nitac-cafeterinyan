@@ -62,12 +62,12 @@ $hogehogenyan = '2019-07-24'
     }
 ?>
 <div class="todayAB">
-    <div class="today todayA">
+    <div class="today">
         <?php
             $ta = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array($hogehogenyan));//date("Y-m-d")));
             $taarr = pg_fetch_array($ta);
         ?>
-        <div class="today-title"><?php echo $taarr[0] ?></div>
+        <div class="today-title"><?php strlen($taarr[0]) >= 10 ? print substr($taarr[0], 0, 9) . '...' : print $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img">
         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
@@ -84,7 +84,7 @@ $hogehogenyan = '2019-07-24'
             $tb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array($hogehogenyan));//date("Y-m-d")));
             $tbbrr = pg_fetch_array($tb);
         ?>
-        <div class="today-title"><?php echo $tbbrr[0] ?></div>
+        <div class="today-title"><?php strlen($tbbrr[0]) >= 10 ? print substr($tbbrr[0], 0, 9) . '...' : print $tbbrr[0] ?></div>
         <img src="<?php echo $tbbrr[1] ?>" class="today-img">
         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
