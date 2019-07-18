@@ -27,7 +27,7 @@ div {
 .todayAB {
 	flex-direction: row;
 	/*border: solid 1px #000;*/
-	height: 25%;
+	min-height: 25%;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -109,19 +109,16 @@ div {
     display: block;
     text-align: center;
 }
-.josetsu-content-wrapper, .weekly-content-wrapper {
-    /*border: solid 1px #000;*/
+.other-content-wrapper {
     flex-direction: column;
     height: auto;
 }
-.josetsu-content-upper, .josetsu-content-under {
+.other-content-upper, .other-content-under {
     flex-direction: row;
     width: 100%;
     height: 50%;
-    /*border-bottom: solid 1px #000;*/
 }
-.josetsu-content {
-    /*border-right: solid 1px #000;*/
+.other-content {
     overflow: hidden;
     width: 50%;
     height: 100%;
