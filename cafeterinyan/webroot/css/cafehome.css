@@ -60,9 +60,6 @@ div {
     height: 32px;
     width: 80px;
 }
-.iine-box-right {
-    /*border-right: solid 1px #000;*/
-}
 .iine {
     margin: auto 0;
     font-size: 16px;
@@ -80,6 +77,15 @@ div {
 }
 .today-sold {
 	visibility: hidden;
+    position: absolute;
+    background-color: rgb(216, 117, 117);
+    height: auto;
+    width: 100px;
+    justify-content: center;
+    transform: rotate(15deg);
+}
+.other-sold {
+    visibility: hidden;
     position: absolute;
     background-color: rgb(216, 117, 117);
     height: auto;
