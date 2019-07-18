@@ -61,10 +61,6 @@ $hogehogenyan = '2019-07-24'
         }
     }
 ?>
-<!--<div class="today-title-wrapper">
-    <div class="todayAB-title">今日のAセット</div>
-    <div class="todayAB-title">今日のBセット</div>
-</div>-->
 <div class="todayAB">
     <div class="today todayA">
         <?php
@@ -73,13 +69,13 @@ $hogehogenyan = '2019-07-24'
         ?>
         <div class="today-title"><?php echo $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img">
-        <a class="today-link" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
-        <div class="iine-wrapper">
+        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
+        <div class="iine-wrapper cover-content">
             <div class="iine-box iine-box-right">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
             </div>
         </div>
-        <div class="sold-wrapper <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
+        <div class="sold-wrapper cover-content <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
 	        <div class="today-sold <?php $taarr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
@@ -90,13 +86,13 @@ $hogehogenyan = '2019-07-24'
         ?>
         <div class="today-title"><?php echo $tbbrr[0] ?></div>
         <img src="<?php echo $tbbrr[1] ?>" class="today-img">
-        <a class="today-link" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
-        <div class="iine-wrapper">
+        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
+        <div class="iine-wrapper cover-content">
             <div class="iine-box">
                 <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
             </div>
         </div>
-        <div class="sold-wrapper <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
+        <div class="sold-wrapper cover-content <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
             <div class="today-sold <?php $tbbrr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
