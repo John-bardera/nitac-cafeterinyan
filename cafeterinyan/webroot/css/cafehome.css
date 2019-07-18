@@ -35,13 +35,13 @@ div {
 }
 .todayAB {
 	flex-direction: row;
-	border: solid 1px #000;
+	/*border: solid 1px #000;*/
 	height: 25%;
     width: 100%;
 }
 .todayA {
     width: calc(100% + 1px);
-	border-right: solid 1px #000;
+	/*border-right: solid 1px #000;*/
 }
 .today {
     flex-direction: column;
@@ -67,14 +67,14 @@ div {
 .iine-box {
     margin: auto 1px 1px auto;
     background-color: #ffffff;
-    border-top: solid 1px #000;
-    border-left: solid 1px #000;
-    border-bottom: solid 1px #000;
+    /*border-top: solid 1px #000;*/
+    /*border-left: solid 1px #000;*/
+    /*border-bottom: solid 1px #000;*/
     height: 32px;
     width: 80px;
 }
 .iine-box-right {
-    border-right: solid 1px #000;
+    /*border-right: solid 1px #000;*/
 }
 .iine {
     margin: auto 0;
@@ -119,7 +119,7 @@ div {
     text-align: center;
 }
 .josetsu-content-wrapper, .weekly-content-wrapper {
-    border: solid 1px #000;
+    /*border: solid 1px #000;*/
     flex-direction: column;
     height: auto;
 }
@@ -127,10 +127,10 @@ div {
     flex-direction: row;
     width: 100%;
     height: 50%;
-    border-bottom: solid 1px #000;
+    /*border-bottom: solid 1px #000;*/
 }
 .josetsu-content {
-    border-right: solid 1px #000;
+    /*border-right: solid 1px #000;*/
     overflow: hidden;
     width: 50%;
     height: 100%;

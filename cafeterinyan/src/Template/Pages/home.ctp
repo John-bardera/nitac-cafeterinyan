@@ -7,7 +7,7 @@ use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
 
 $this->layout = false;
-echo $this->Html->css('home');
+echo $this->Html->css(['cafehome', 'home', 'base', 'style']);
 
 if (!Configure::read('debug')):
     throw new NotFoundException(
@@ -36,7 +36,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body class="home">
-
 <header class="row">
 </header>
 <?php
