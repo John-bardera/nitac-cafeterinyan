@@ -101,15 +101,15 @@ $hogehogenyan = '2019-07-24'
     <div class="title-wrapper">
         <div class="single-title">常設メニュー</div>
     </div>
-    <div class="josetsu-content-wrapper">
-        <div class="josetsu-content-upper">
+    <div class="other-content-wrapper">
+        <div class="other-content-upper">
             <?php
                 $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
             ?>
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
-                <div class="josetsu-content">
-                    <div class="josetsu-name"><?php echo $jo[0] ?></div>
-                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="josetsu_img"></a>
+                <div class="other-content">
+                    <div class="other-name"><?php echo $jo[0] ?></div>
+                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="other-img"></a>
                     <div class="iine"><?php echo $jo[2] ?></div>
                     <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
                         <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
@@ -118,14 +118,14 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
-            <div class="josetsu-content-under">
+            <div class="other-content-under">
                 <?php
                     $kjs = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 3 ', array(date("Y-m-d")));
                 ?>
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
-                    <div class="josetsu-content">
-                        <div class="josetsu-name"><?php echo $kjo[0] ?></div>
-                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="josetsu_img"></a>
+                    <div class="other-content">
+                        <div class="other-name"><?php echo $kjo[0] ?></div>
+                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="other-img"></a>
                         <div class="iine"><?php echo $kjo[2] ?></div>
                         <div class="sold-wrapper cover-content <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $kjo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
@@ -136,12 +136,12 @@ $hogehogenyan = '2019-07-24'
         <?php } ?>
     </div>
 </div>
-<div class="weeklyAB">
+<div class="weekly">
     <div class="title-wrapper">
         <div class="single-title">今週のメニュー</div>
     </div>
-    <div class="weekly-content-wrapper">
-        <div class="weeklyA">
+    <div class="other-content-wrapper">
+        <div class="other-content-upper">
             <?php for($i = 1 + 6, $j = 0; $i < 5 + 6 + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
@@ -152,9 +152,9 @@ $hogehogenyan = '2019-07-24'
                         $wa = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                         $wawa = pg_fetch_array($wa);
                 ?>
-                    <div class="weeklyA_name"><?php echo $wawa[0] ?></div>
+                    <div class="other-name"><?php echo $wawa[0] ?></div>
                     <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
-                        <img src="<?php echo $wawa[1] ?>" class="weeklyA_img">
+                        <img src="<?php echo $wawa[1] ?>" class="other-img">
                     </a>
                     <div class="iine"><?php echo $wawa[2] ?></div>
                     <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
@@ -163,7 +163,7 @@ $hogehogenyan = '2019-07-24'
                 <?php } ?>
             <?php } ?>
         </div>
-        <div class="weeklyB">
+        <div class="other-content-under">
             <?php for($i = 1 + 6,$j = 0; $i < 5 + 6 + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
@@ -174,9 +174,9 @@ $hogehogenyan = '2019-07-24'
                         $wb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
                         $wbwb = pg_fetch_array($wb);
                 ?>
-                    <div class="weeklyB-name"><?php echo $wbwb[0] ?></div>
+                    <div class="other-name"><?php echo $wbwb[0] ?></div>
                     <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
-                        <img src="<?php echo $wbwb[1] ?>" class="weeklyB_img">
+                        <img src="<?php echo $wbwb[1] ?>" class="other-img">
                     </a>
                     <div class="iine"><?php echo $wbwb[2] ?></div>
                     <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
