@@ -61,10 +61,10 @@ $hogehogenyan = '2019-07-24'
         }
     }
 ?>
-<div class="today-title-wrapper">
+<!--<div class="today-title-wrapper">
     <div class="todayAB-title">今日のAセット</div>
     <div class="todayAB-title">今日のBセット</div>
-</div>
+</div>-->
 <div class="todayAB">
     <div class="today todayA">
         <?php
