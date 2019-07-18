@@ -29,6 +29,7 @@ div {
 	/*border: solid 1px #000;*/
 	height: 25%;
     width: 100%;
+    margin-bottom: 10px;
 }
 .today {
     flex-direction: column;
@@ -44,15 +45,14 @@ div {
     margin: 0 auto 5px;
 }
 .today-img {
-    z-index: 2;
-    height: auto;
+    min-height: calc(85% - 5px);
 }
 .iine-wrapper {
     z-index: 3;
     transform: translateY(-200%);
 }
 .iine-box {
-    margin: auto 1px 1px auto;
+    margin: auto -1px -1px auto;
     background-color: #ffffff;
     /*border-top: solid 1px #000;*/
     /*border-left: solid 1px #000;*/
