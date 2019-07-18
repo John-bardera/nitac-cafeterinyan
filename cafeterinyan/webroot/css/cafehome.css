@@ -40,7 +40,8 @@ div {
     width: 100%;
 }
 .todayA {
-    width: calc(100% + 1px);
+    width: 100%;
+    /*width: calc(100% + 1px);*/
 	/*border-right: solid 1px #000;*/
 }
 .today {
@@ -49,6 +50,7 @@ div {
 	width: 50%;
     color: #000;
     overflow: hidden;
+    padding: 5px;
 }
 .today-title {
 	font-size: 20px;
@@ -111,7 +113,7 @@ div {
 .josetsu,.weeklyAB {
     display: flex;
     flex-direction: column;
-    min-height: 25%;
+    height: 30%;
 }
 .title-wrapper {
     width: 100%;
