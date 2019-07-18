@@ -14,10 +14,10 @@ div {
 .cover-content {
     min-height: 100%;
     min-width: 100%;
-    transform: translateY(-100%);
 }
 .link {
     z-index: 100;
+    transform: translateY(-100%);
 }
 .single-title {
     font-size: 24px;
@@ -38,9 +38,9 @@ div {
     margin: 5px;
 }
 .today-title {
-    white-space: nowrap;
-	font-size: auto;
-    min-height: 15%;
+    font-size: 16px;
+    font-weight: bold;
+    height: 15%;
     margin: 0 auto 5px;
 }
 .today-img {
@@ -49,6 +49,7 @@ div {
 }
 .iine-wrapper {
     z-index: 3;
+    transform: translateY(-200%);
 }
 .iine-box {
     margin: auto 1px 1px auto;
@@ -72,12 +73,10 @@ div {
     margin: auto 4px;
 }
 .sold-wrapper {
-    position: absolute;
-    z-index: 110;
-    height: 25%;
-    width: 50%;
+    z-index: 4;
     justify-content: center;
     align-items: center;
+    transform: translateY(-300%);
 }
 .today-sold {
 	visibility: hidden;
