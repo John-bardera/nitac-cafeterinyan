@@ -152,13 +152,15 @@ $hogehogenyan = '2019-07-24'
                         $wa = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0 ', array(date("Y-m-d", strtotime($time))));
                         $wawa = pg_fetch_array($wa);
                 ?>
-                    <div class="other-name"><?php echo $wawa[0] ?></div>
-                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
-                        <img src="<?php echo $wawa[1] ?>" class="other-img">
-                    </a>
-                    <div class="iine"><?php echo $wawa[2] ?></div>
-                    <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
-                        <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                    <div class="other-content">
+                        <div class="other-name"><?php echo $wawa[0] ?></div>
+                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
+                            <img src="<?php echo $wawa[1] ?>" class="other-img">
+                        </a>
+                        <div class="iine"><?php echo $wawa[2] ?></div>
+                        <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
+                            <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                        </div>
                     </div>
                 <?php } ?>
             <?php } ?>
@@ -174,13 +176,15 @@ $hogehogenyan = '2019-07-24'
                         $wb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1 ', array(date("Y-m-d", strtotime($time))));
                         $wbwb = pg_fetch_array($wb);
                 ?>
-                    <div class="other-name"><?php echo $wbwb[0] ?></div>
-                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
-                        <img src="<?php echo $wbwb[1] ?>" class="other-img">
-                    </a>
-                    <div class="iine"><?php echo $wbwb[2] ?></div>
-                    <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
-                        <div class="other-sold <?php $wb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                    <div class="other-content">
+                        <div class="other-name"><?php echo $wbwb[0] ?></div>
+                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
+                            <img src="<?php echo $wbwb[1] ?>" class="other-img">
+                        </a>
+                        <div class="iine"><?php echo $wbwb[2] ?></div>
+                        <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
+                            <div class="other-sold <?php $wb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                        </div>
                     </div>
                 <?php } ?>
             <?php } ?>
