@@ -99,7 +99,7 @@ div {
 .gray-filter {
     filter: graysclae(50%);
 }
-.josetsu,.weeklyAB {
+.josetsu,.weekly {
     display: flex;
     flex-direction: column;
     height: 30%;
