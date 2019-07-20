@@ -163,7 +163,7 @@ $hogehogenyan = '2019-07-24'
                     if(date("w", strtotime($time)) == (string)6 || date("w", strtotime($time)) == (string)0){
                         $j++;
                     } else {
-                        $wa = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0  ORDER BY daily_menu.id', array(date("Y-m-d", strtotime($time))));
+                        $wa = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 0  ORDER BY daily_menu.date', array(date("Y-m-d", strtotime($time))));
                         $wawa = pg_fetch_array($wa);
                 ?>
                     <div class="other-content">
@@ -185,7 +185,7 @@ $hogehogenyan = '2019-07-24'
                     if(date("w", strtotime($time)) == (string)6 || date("w", strtotime($time)) == (string)0){
                         $j++;
                     } else {
-                        $wb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1  ORDER BY daily_menu.id', array(date("Y-m-d", strtotime($time))));
+                        $wb = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 1  ORDER BY daily_menu.date', array(date("Y-m-d", strtotime($time))));
                         $wbwb = pg_fetch_array($wb);
                 ?>
                     <div class="other-content">
