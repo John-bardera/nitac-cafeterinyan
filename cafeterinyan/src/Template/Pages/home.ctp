@@ -108,7 +108,7 @@ $hogehogenyan = '2019-07-24'
     <div class="other-content-wrapper">
         <div class="other-content-upper">
             <?php
-                $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id ORDER BY daily_menu.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
+                $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ORDER BY daily_menu.id', array(date("Y-m-d")));
             ?>
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
             <div class="other-content">
