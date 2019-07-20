@@ -48,7 +48,7 @@ div {
     min-height: calc(85% - 5px);
 }
 .iine-wrapper {
-    z-index: 3;
+    z-index: 4;
     transform: translateY(-200%);
 }
 .iine-box {
@@ -70,7 +70,7 @@ div {
     margin: auto 4px;
 }
 .sold-wrapper {
-    z-index: 4;
+    z-index: 3;
     justify-content: center;
     align-items: center;
     transform: translateY(-300%);
@@ -91,7 +91,9 @@ div {
     height: auto;
     width: 100px;
     justify-content: center;
-    transform: rotate(15deg);
+    transform: translateY(5px) rotate(15deg);
+    font-size: 4vw;
+    font-weight: bold
 }
 .sold {
     visibility: visible;
