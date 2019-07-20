@@ -44,6 +44,7 @@ if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
 $hogehogenyan = '2019-07-24'
+$add_date = 4
 ?>
 
 <?php
@@ -155,8 +156,23 @@ $hogehogenyan = '2019-07-24'
         <div class="single-title">今週のメニュー</div>
     </div>
     <div class="other-content-wrapper">
+        <div class="weekly-date-wrapper">
+            <?php for($i = 1 + $add_date, $j = 0; $i < 5 + $add_date + $j; $i++) { ?>
+                <?php
+                    $time_passed['send_time'] = $i;
+                    $time = "+" . $time_passed['send_time'] . " day";
+                    if(date("w", strtotime($time)) == (string)6 || date("w", strtotime($time)) == (string)0){
+                        $j++;
+                    } else {
+                ?>
+                    <div class="weekly-date">
+                        <?php echo (string)date("m/d", strtotime($time)) ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        </div>
         <div class="other-content-upper">
-            <?php for($i = 1 + 4, $j = 0; $i < 5 + 4 + $j; $i++) { ?>
+            <?php for($i = 1 + $add_date, $j = 0; $i < 5 + $add_date + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . " day";
@@ -178,7 +194,7 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <div class="other-content-under">
-            <?php for($i = 1 + 4,$j = 0; $i < 5 + 4 + $j; $i++) { ?>
+            <?php for($i = 1 + $add_date, $j = 0; $i < 5 + $add_date + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . " day";
