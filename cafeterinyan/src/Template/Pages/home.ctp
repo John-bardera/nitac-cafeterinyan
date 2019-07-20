@@ -117,6 +117,7 @@ $hogehogenyan = '2019-07-24'
                     <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
                         <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                     </div>
+                </div>
             </div>
         </div>
         <div class="sold-wrapper cover-content <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
