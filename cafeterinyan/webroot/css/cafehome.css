@@ -8,6 +8,8 @@ body {
 	height: 100%;
     width: 100%;
     line-height: normal !important;
+    background-color: floralwhite;
+    color: rgb(47, 48, 69);
 }
 div {
 	display: flex;
@@ -82,7 +84,9 @@ div {
     height: auto;
     width: 100px;
     justify-content: center;
-    transform: rotate(15deg);
+    transform: translateY(16px) rotate(16deg);
+    font-size: 8vw;
+    font-weight: bold;
 }
 .other-sold {
     visibility: hidden;
@@ -91,7 +95,7 @@ div {
     height: auto;
     width: 100px;
     justify-content: center;
-    transform: translateY(5px) rotate(15deg);
+    transform: translateY(5px) rotate(16deg);
     font-size: 4vw;
     font-weight: bold
 }
