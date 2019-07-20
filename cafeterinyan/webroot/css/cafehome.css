@@ -97,7 +97,7 @@ div {
     visibility: visible;
 }
 .gray-filter {
-    filter: graysclae(50%);
+    filter: brightness(0.4);
 }
 .josetsu,.weekly {
     display: flex;
