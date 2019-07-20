@@ -6,7 +6,8 @@ body {
     flex-direction: column;
 	overflow: hidden;
 	height: 100%;
-	width: 100%;
+    width: 100%;
+    line-height: normal;
 }
 div {
 	display: flex;
@@ -20,16 +21,15 @@ div {
     transform: translateY(-100%);
 }
 .single-title {
-    font-size: 24px;
+    font-size: 16px;
     text-align: center;
     display: block;
 }
 .todayAB {
 	flex-direction: row;
-	/*border: solid 1px #000;*/
 	min-height: 25%;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 .today {
     flex-direction: column;
@@ -54,9 +54,6 @@ div {
 .iine-box {
     margin: auto -1px -1px auto;
     background-color: #ffffff;
-    /*border-top: solid 1px #000;*/
-    /*border-left: solid 1px #000;*/
-    /*border-bottom: solid 1px #000;*/
     height: 32px;
     width: 80px;
 }
@@ -104,6 +101,9 @@ div {
     flex-direction: column;
     height: 30%;
 }
+.josetsu {
+    margin-bottom: 16px;
+}
 .title-wrapper {
     width: 100%;
     display: block;
@@ -123,5 +123,26 @@ div {
     width: 50%;
     height: 100%;
     flex-direction: column;
-    margin: 3px;
+    margin: 0 3px;
+}
+.other-name {
+    font-size: 3vm;
+    display: block;
+    height: 2vh;
+    text-align: center;
+    overflow: hidden;
+
+}
+.other-iine-box {
+    margin: auto 0 -1px auto;
+    height: 16px;
+    width: 32px;
+
+}
+.other-iine {
+    font-size: 8px;
+}
+.other-heart {
+    color: red;
+    margin: auto 2px;
 }

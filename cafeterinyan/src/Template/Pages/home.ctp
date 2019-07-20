@@ -110,8 +110,8 @@ $hogehogenyan = '2019-07-24'
                 <img src="<?php echo $jo[1] ?>" class="today-img"/>
                 <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
                 <div class="iine-wrapper cover-content">
-                    <div class="iine-box">
-                        <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $jo[2] ?></div>
+                    <div class="other-iine-box">
+                        <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $jo[2] ?></div>
                     </div>
                 </div>
                 <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
