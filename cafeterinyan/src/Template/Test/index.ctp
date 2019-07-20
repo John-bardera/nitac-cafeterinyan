@@ -115,14 +115,14 @@ if(isset($_GET['update'])){
             <input type="hidden" name="Lsum" value="<?php echo $pushLikes;?>"/>
             <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
             <input type="hidden" name="update" value="0asdfnmasdfkasdfo9fsd">
-            <input type="submit" value = "×">
+            <input type="submit" value = "×" class="back-submit">
         </form>
         <div class="back-button">
             <ion-icon name="arrow-round-back" class="back-button-icon"></ion-icon>
         </div>
     </div>
     <img src=<?php echo $image;?>/>
-    <t1><?php echo $name;?></t1>
+    <h1><?php echo $name;?></h1>
     <div class="iine-wrapper">
         <form action='' method='GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>"/>
@@ -141,18 +141,18 @@ if(isset($_GET['update'])){
     </div>
     <table border="1"width="90%">
         <tr>
-            <th width = "30%">値段</th> <th width = "70%"><?php echo $price;?>円</th> <br>
+            <th width = "30%">値段</th> <th width = "70%"><?php echo $price;?>円</th>
         </tr>
         <tr>
-            <th>エネルギー</th> <th><?php echo $energy;?>kcal</th> <br>
+            <th>エネルギー</th> <th><?php echo $energy;?>kcal</th>
         </tr>
         <tr>
-            <th>タンパク質</th> <th><?php echo $protein;?>g</th> <br>
+            <th>タンパク質</th> <th><?php echo $protein;?>g</th>
         <tr>
-            <th>脂質</th> <th><?php echo $lipid;?>g</th> <br>
+            <th>脂質</th> <th><?php echo $lipid;?>g</th>
         </tr>
         <tr>
-            <th>塩分</th> <th><?php echo $salt;?>g</th> <br>
+            <th>塩分</th> <th><?php echo $salt;?>g</th>
         </tr>
     </table>
 </body>

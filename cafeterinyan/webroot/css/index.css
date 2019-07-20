@@ -1,3 +1,19 @@
 form {
     opacity: 0;
 }
+.header {
+    height: 40px;
+}
+.back-submit {
+    height: 100%;
+    width: 40px;
+}
+.back-button-icon {
+    font-size: 32px;
+    position: fixed;
+    left: 0;
+    margin: 4px;
+}
+img {
+    min-height: 40%;
+}
