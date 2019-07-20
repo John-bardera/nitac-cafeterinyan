@@ -166,7 +166,10 @@ $add_date = 4;
                     } else {
                 ?>
                     <div class="weekly-date">
-                        <?php echo (string)date("m/d", strtotime($time)) ?>
+                        <?php
+                        $day_array = array("日", "月", "火", "水", "木", "金", "土");
+                        echo (string)date("n/j", strtotime($time)) . "(" . $day_array[(integer)date("w", strtotime($time))] . ")";
+                        ?>
                     </div>
                 <?php } ?>
             <?php } ?>
