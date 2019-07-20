@@ -113,7 +113,7 @@ $add_date = 4;
             ?>
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
             <div class="other-content">
-                <div class="other-name"><?php mb_strlen($jo[0], 'UTF-8') >= 7 ? print mb_substr($jo[0], 0, 7, 'UTF-8') . '...' : print $jo[0] ?></div>
+                <div class="other-name"><?php mb_strlen($jo[0], 'UTF-8') >= 7 ? print mb_substr($jo[0], 0, 6, 'UTF-8') . '...' : print $jo[0] ?></div>
                 <img src="<?php echo $jo[1] ?>" class="today-img <?php $jo[4] == 1 ? null : print 'gray-filter' ?>"/>
                 <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
                 <div class="iine-wrapper cover-content">
@@ -134,7 +134,7 @@ $add_date = 4;
                 ?>
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
                     <div class="other-content">
-                        <div class="other-name"><?php mb_strlen($kjo[0], 'UTF-8') >= 7 ? print mb_substr($kjo[0], 0, 7, 'UTF-8') . '...' : print $kjo[0] ?></div>
+                        <div class="other-name"><?php mb_strlen($kjo[0], 'UTF-8') >= 7 ? print mb_substr($kjo[0], 0, 6, 'UTF-8') . '...' : print $kjo[0] ?></div>
                         <img src="<?php echo $kjo[1] ?>" class="today-img <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"></a>
                         <div class="iine-wrapper cover-content">
@@ -186,7 +186,7 @@ $add_date = 4;
                         $wawa = pg_fetch_array($wa);
                 ?>
                     <div class="other-content">
-                        <div class="other-name"><?php mb_strlen($wawa[0], 'UTF-8') >= 7 ? print mb_substr($wawa[0], 0, 7, 'UTF-8') . '...' : print $wawa[0] ?></div>
+                        <div class="other-name"><?php mb_strlen($wawa[0], 'UTF-8') >= 7 ? print mb_substr($wawa[0], 0, 6, 'UTF-8') . '...' : print $wawa[0] ?></div>
                         <img src="<?php echo $wawa[1] ?>" class="today-img <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>"></a>
                         <div class="sold-wrapper cover-content">
@@ -208,7 +208,7 @@ $add_date = 4;
                         $wbwb = pg_fetch_array($wb);
                 ?>
                     <div class="other-content">
-                        <div class="other-name"><?php mb_strlen($wbwb[0], 'UTF-8') >= 7 ? print mb_substr($wbwb[0], 0, 7, 'UTF-8') . '...' : print $wbwb[0] ?></div>
+                        <div class="other-name"><?php mb_strlen($wbwb[0], 'UTF-8') >= 7 ? print mb_substr($wbwb[0], 0, 6, 'UTF-8') . '...' : print $wbwb[0] ?></div>
                         <img src="<?php echo $wbwb[1] ?>" class="today-img <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>"></a>
                         <div class="sold-wrapper cover-content">
