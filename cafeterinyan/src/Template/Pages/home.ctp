@@ -36,8 +36,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body class="home">
-<header class="row">
-</header>
 <?php
 
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
@@ -114,6 +112,21 @@ $hogehogenyan = '2019-07-24'
                     <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
                         <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                     </div>
+
+                    <img src="<?php echo $taarr[1] ?>" class="today-img">
+                    <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
+                    <div class="iine-wrapper cover-content">
+                        <div class="iine-box">
+                            <div class="iine">
+                                <ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="sold-wrapper cover-content <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
+	        <div class="today-sold <?php $taarr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+        </div>
                 </div>
             <?php } ?>
         </div>
@@ -142,7 +155,7 @@ $hogehogenyan = '2019-07-24'
     </div>
     <div class="other-content-wrapper">
         <div class="other-content-upper">
-            <?php for($i = 1 + 6, $j = 0; $i < 5 + 6 + $j; $i++) { ?>
+            <?php for($i = 1 + 4, $j = 0; $i < 5 + 4 + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . " day";
@@ -157,7 +170,7 @@ $hogehogenyan = '2019-07-24'
                         <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
                             <img src="<?php echo $wawa[1] ?>" class="other-img">
                         </a>
-                        <div class="iine"><?php echo $wawa[2] ?></div>
+                        <!--<div class="iine"><?php echo $wawa[2] ?></div>-->
                         <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
@@ -166,7 +179,7 @@ $hogehogenyan = '2019-07-24'
             <?php } ?>
         </div>
         <div class="other-content-under">
-            <?php for($i = 1 + 6,$j = 0; $i < 5 + 6 + $j; $i++) { ?>
+            <?php for($i = 1 + 4,$j = 0; $i < 5 + 4 + $j; $i++) { ?>
                 <?php
                     $time_passed['send_time'] = $i;
                     $time = "+" . $time_passed['send_time'] . " day";
@@ -181,7 +194,7 @@ $hogehogenyan = '2019-07-24'
                         <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
                             <img src="<?php echo $wbwb[1] ?>" class="other-img">
                         </a>
-                        <div class="iine"><?php echo $wbwb[2] ?></div>
+                        <!--<div class="iine"><?php echo $wbwb[2] ?></div>-->
                         <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $wb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>

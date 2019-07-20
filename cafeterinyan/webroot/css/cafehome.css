@@ -39,7 +39,7 @@ div {
     margin: 5px;
 }
 .today-title {
-    font-size: 16px;
+    font-size: 4.5vw;
     font-weight: bold;
     height: 15%;
     margin: 0 auto 5px;
@@ -122,4 +122,6 @@ div {
     overflow: hidden;
     width: 50%;
     height: 100%;
+    flex-direction: column;
+    margin: 3px;
 }
