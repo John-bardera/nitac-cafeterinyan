@@ -107,20 +107,15 @@ $hogehogenyan = '2019-07-24'
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
                 <div class="other-content">
                     <div class="other-name"><?php echo $jo[0] ?></div>
-                    <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"><img src="<?php echo $jo[1] ?>" class="other-img"></a>
-                    <div class="iine"><?php echo $jo[2] ?></div>
-                    <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
-                        <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
-                    </div>
-
-                    <img src="<?php echo $taarr[1] ?>" class="today-img">
-                    <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
+                    <img src="<?php echo $jo[1] ?>" class="today-img">
+                    <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
                     <div class="iine-wrapper cover-content">
                         <div class="iine-box">
-                            <div class="iine">
-                                <ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?>
-                            </div>
+                            <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $jo[2] ?></div>
                         </div>
+                    </div>
+                    <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
+                        <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                     </div>
             </div>
         </div>
