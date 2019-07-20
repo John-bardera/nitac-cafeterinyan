@@ -26,13 +26,13 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <title>
         <?= $cakeDescription ?>
     </title>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('home.css') ?>
     <?= $this->Html->css('cafehome.css') ?>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 </head>
 <body class="home">
@@ -187,11 +187,8 @@ $add_date = 4;
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php mb_strlen($wawa[0], 'UTF-8') >= 7 ? print mb_substr($wawa[0], 0, 6, 'UTF-8') . '...' : print $wawa[0] ?></div>
-                        <img src="<?php echo $wawa[1] ?>" class="today-img <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>"/>
+                        <img src="<?php echo $wawa[1] ?>" class="today-img"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>"></a>
-                        <div class="sold-wrapper cover-content">
-                            <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
-                        </div>
                     </div>
                 <?php } ?>
             <?php } ?>
@@ -209,11 +206,8 @@ $add_date = 4;
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php mb_strlen($wbwb[0], 'UTF-8') >= 7 ? print mb_substr($wbwb[0], 0, 6, 'UTF-8') . '...' : print $wbwb[0] ?></div>
-                        <img src="<?php echo $wbwb[1] ?>" class="today-img <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>"/>
+                        <img src="<?php echo $wbwb[1] ?>" class="today-img"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>"></a>
-                        <div class="sold-wrapper cover-content">
-                            <div class="other-sold <?php $wbwb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
-                        </div>
                     </div>
                 <?php } ?>
             <?php } ?>
