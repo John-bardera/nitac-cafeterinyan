@@ -7,7 +7,7 @@ body {
 	overflow: hidden;
 	height: 100%;
     width: 100%;
-    line-height: normal;
+    line-height: normal !important;
 }
 div {
 	display: flex;
@@ -126,20 +126,22 @@ div {
     margin: 0 3px;
 }
 .other-name {
-    font-size: 3vm;
+    font-size: 3vw;
     display: block;
     height: 2vh;
     text-align: center;
     overflow: hidden;
+    min-height: 2.5vh;
 
 }
 .other-iine-box {
     margin: auto 0 -1px auto;
+    background-color: #ffffff;
     height: 16px;
     width: 32px;
-
 }
 .other-iine {
+    margin: auto;
     font-size: 8px;
 }
 .other-heart {
