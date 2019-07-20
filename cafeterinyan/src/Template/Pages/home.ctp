@@ -105,26 +105,22 @@ $hogehogenyan = '2019-07-24'
                 $js = pg_query_params($link, 'SELECT name, image, likes, daily_menu.id, sold FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE date = $1 AND type = 2 ', array(date("Y-m-d")));
             ?>
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
-                <div class="other-content">
-                    <div class="other-name"><?php echo $jo[0] ?></div>
-                    <img src="<?php echo $jo[1] ?>" class="today-img">
-                    <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
-                    <div class="iine-wrapper cover-content">
-                        <div class="iine-box">
-                            <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $jo[2] ?></div>
-                        </div>
+            <div class="other-content">
+                <div class="other-name"><?php echo $jo[0] ?></div>
+                <img src="<?php echo $jo[1] ?>" class="today-img"/>
+                <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
+                <div class="iine-wrapper cover-content">
+                    <div class="iine-box">
+                        <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $jo[2] ?></div>
                     </div>
-                    <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
-                        <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
-                    </div>
+                </div>
+                <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
+                    <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                 </div>
             </div>
-        </div>
-        <div class="sold-wrapper cover-content <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
-	        <div class="today-sold <?php $taarr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
-        </div>
-                </div>
             <?php } ?>
+        </div>
+    </div>
         </div>
         <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
             <div class="other-content-under">
@@ -134,7 +130,7 @@ $hogehogenyan = '2019-07-24'
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $kjo[0] ?></div>
-                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="other-img"></a>
+                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="other-img"/></a>
                         <div class="iine"><?php echo $kjo[2] ?></div>
                         <div class="sold-wrapper cover-content <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $kjo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
@@ -164,7 +160,7 @@ $hogehogenyan = '2019-07-24'
                     <div class="other-content">
                         <div class="other-name"><?php echo $wawa[0] ?></div>
                         <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
-                            <img src="<?php echo $wawa[1] ?>" class="other-img">
+                            <img src="<?php echo $wawa[1] ?>" class="other-img" />
                         </a>
                         <!--<div class="iine"><?php echo $wawa[2] ?></div>-->
                         <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
