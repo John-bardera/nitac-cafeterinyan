@@ -128,8 +128,13 @@ $hogehogenyan = '2019-07-24'
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $kjo[0] ?></div>
-                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"><img src="<?php echo $kjo[1] ?>" class="other-img"/></a>
-                        <div class="iine"><?php echo $kjo[2] ?></div>
+                        <img src="<?php echo $kjo[1] ?>" class="today-img"/>
+                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"></a>
+                        <div class="iine-wrapper cover-content">
+                            <div class="other-iine-box">
+                                <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $kjo[2] ?></div>
+                            </div>
+                        </div>
                         <div class="sold-wrapper cover-content <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $kjo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
@@ -157,10 +162,8 @@ $hogehogenyan = '2019-07-24'
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $wawa[0] ?></div>
-                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>">
-                            <img src="<?php echo $wawa[1] ?>" class="other-img" />
-                        </a>
-                        <!--<div class="iine"><?php echo $wawa[2] ?></div>-->
+                        <img src="<?php echo $wawa[1] ?>" class="today-img"/>
+                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>"></a>
                         <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
                             <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
@@ -181,12 +184,10 @@ $hogehogenyan = '2019-07-24'
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $wbwb[0] ?></div>
-                        <a href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>">
-                            <img src="<?php echo $wbwb[1] ?>" class="other-img">
-                        </a>
-                        <!--<div class="iine"><?php echo $wbwb[2] ?></div>-->
+                        <img src="<?php echo $wbwb[1] ?>" class="today-img"/>
+                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>"></a>
                         <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
-                            <div class="other-sold <?php $wb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
+                            <div class="other-sold <?php $wbwb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
                     </div>
                 <?php } ?>
