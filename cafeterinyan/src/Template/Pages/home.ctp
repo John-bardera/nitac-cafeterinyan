@@ -66,14 +66,17 @@ $hogehogenyan = '2019-07-24'
             $taarr = pg_fetch_array($ta);
         ?>
         <div class="today-title"><?php mb_strlen($taarr[0], 'UTF-8') >= 10 ? print mb_substr($taarr[0], 0, 9, 'UTF-8') . '...' : print $taarr[0] ?></div>
-        <img src="<?php echo $taarr[1] ?>" class="today-img">
+        <img src="<?php echo $taarr[1] ?>" class="today-img <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
-                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $taarr[2] ?></div>
+                <div class="iine">
+                    <ion-icon name="heart" class="heart"></ion-icon>
+                    <div class="iine-number"><?php echo $taarr[2] ?></div>
+                </div>
             </div>
         </div>
-        <div class="sold-wrapper cover-content <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
+        <div class="sold-wrapper cover-content">
 	        <div class="today-sold <?php $taarr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
@@ -83,14 +86,17 @@ $hogehogenyan = '2019-07-24'
             $tbbrr = pg_fetch_array($tb);
         ?>
         <div class="today-title"><?php mb_strlen($tbbrr[0], 'UTF-8') >= 10 ? print mb_substr($tbbrr[0], 0, 9, 'UTF-8') . '...' : print $tbbrr[0] ?></div>
-        <img src="<?php echo $tbbrr[1] ?>" class="today-img">
+        <img src="<?php echo $tbbrr[1] ?>" class="today-img <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
-                <div class="iine"><ion-icon name="heart" class="heart"></ion-icon><?php echo $tbbrr[2] ?></div>
+                <div class="iine">
+                    <ion-icon name="heart" class="heart"></ion-icon>
+                    <div class="iine-number"><?php echo $tbbrr[2] ?></div>
+                </div>
             </div>
         </div>
-        <div class="sold-wrapper cover-content <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
+        <div class="sold-wrapper cover-content">
             <div class="today-sold <?php $tbbrr[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
         </div>
     </div>
@@ -107,14 +113,14 @@ $hogehogenyan = '2019-07-24'
             <?php for($jo = pg_fetch_array($js); $jo != NULL; $jo = pg_fetch_array($js)) { ?>
             <div class="other-content">
                 <div class="other-name"><?php echo $jo[0] ?></div>
-                <img src="<?php echo $jo[1] ?>" class="today-img"/>
+                <img src="<?php echo $jo[1] ?>" class="today-img <?php $jo[4] == 1 ? null : print 'gray-filter' ?>"/>
                 <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
                 <div class="iine-wrapper cover-content">
                     <div class="other-iine-box">
                         <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $jo[2] ?></div>
                     </div>
                 </div>
-                <div class="sold-wrapper cover-content <?php $jo[4] == 1 ? null : print 'gray-filter' ?>">
+                <div class="sold-wrapper cover-content">
                     <div class="other-sold <?php $jo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                 </div>
             </div>
@@ -128,14 +134,14 @@ $hogehogenyan = '2019-07-24'
                 <?php for($kjo = pg_fetch_array($kjs); $kjo != NULL; $kjo = pg_fetch_array($kjs)) { ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $kjo[0] ?></div>
-                        <img src="<?php echo $kjo[1] ?>" class="today-img"/>
+                        <img src="<?php echo $kjo[1] ?>" class="today-img <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"></a>
                         <div class="iine-wrapper cover-content">
                             <div class="other-iine-box">
                                 <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $kjo[2] ?></div>
                             </div>
                         </div>
-                        <div class="sold-wrapper cover-content <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>">
+                        <div class="sold-wrapper cover-content">
                             <div class="other-sold <?php $kjo[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
                     </div>
@@ -162,9 +168,9 @@ $hogehogenyan = '2019-07-24'
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $wawa[0] ?></div>
-                        <img src="<?php echo $wawa[1] ?>" class="today-img"/>
+                        <img src="<?php echo $wawa[1] ?>" class="today-img <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>"></a>
-                        <div class="sold-wrapper cover-content <?php $wawa[4] == 1 ? null : print 'gray-filter' ?>">
+                        <div class="sold-wrapper cover-content">
                             <div class="other-sold <?php $wawa[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
                     </div>
@@ -184,9 +190,9 @@ $hogehogenyan = '2019-07-24'
                 ?>
                     <div class="other-content">
                         <div class="other-name"><?php echo $wbwb[0] ?></div>
-                        <img src="<?php echo $wbwb[1] ?>" class="today-img"/>
+                        <img src="<?php echo $wbwb[1] ?>" class="today-img <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>"/>
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>"></a>
-                        <div class="sold-wrapper cover-content <?php $wbwb[4] == 1 ? null : print 'gray-filter' ?>">
+                        <div class="sold-wrapper cover-content">
                             <div class="other-sold <?php $wbwb[4] == 1 ? null : print 'sold' ?>">売り切れ</div>
                         </div>
                     </div>

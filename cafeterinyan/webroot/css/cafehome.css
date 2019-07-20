@@ -52,14 +52,17 @@ div {
     transform: translateY(-200%);
 }
 .iine-box {
-    margin: auto -1px -1px auto;
+    margin: auto 0 -1px auto;
     background-color: #ffffff;
     height: 32px;
-    width: 80px;
+    width: 64px;
 }
 .iine {
     margin: auto 0;
+}
+.iine-number {
     font-size: 16px;
+    margin: auto 0;
 }
 .heart {
     color: red;
