@@ -120,8 +120,6 @@ $hogehogenyan = '2019-07-24'
             </div>
             <?php } ?>
         </div>
-    </div>
-        </div>
         <?php if(date("m-d") >= "06-01" && date("m-d") <= "10-31") { ?>
             <div class="other-content-under">
                 <?php
