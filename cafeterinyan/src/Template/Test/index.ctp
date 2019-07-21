@@ -118,7 +118,8 @@ if(isset($_GET['update'])){
             <input type="submit" value = "×" class="back-submit">
         </form>
         <div class="back-button">
-            <ion-icon name="arrow-round-back" class="back-button-icon"></ion-icon>
+            <div class="back-button-text"></div>
+            <!--<ion-icon name="arrow-round-back" class="back-button-icon"></ion-icon>-->
         </div>
     </div>
     <img src=<?php echo $image;?>/>
