@@ -22,22 +22,27 @@ form {
 }
 .content-text-part {
     padding: 4px 0 0 4px;
+    flex-direction: column;
 }
 .menu-name {
     font-size: 5.7vw;
     font-weight: bold;
 }
 .menu-value {
-    font-size: 4vw;
+    font-size: 5vw;
+    font-weight: 500;
 }
 .menu-status-wrapper {
     flex-direction: column;
+    position: fixed;
+    width: 100%;
+    bottom: 40px;
 }
 .status-wrapper {
     flex-direction: row;
     border-bottom: dashed 1px
 }
-.status-name {
+.status-name, .status-value {
     width: 50%;
     margin-left: 8px;
     margin-top: 2px;
@@ -47,4 +52,16 @@ form {
     position: fixed;
     right: 0;
     bottom: 0;
+}
+
+.iine-form, .sold-form {
+    height: 32px;
+}
+.form-title-wrapper {
+    position: fixed;
+    height: 32px;
+}
+.form-title {
+    display: block;
+    text-align: center;
 }
