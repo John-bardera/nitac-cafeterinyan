@@ -30,7 +30,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('index.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-    <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
 </head>
 <?php
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
@@ -146,6 +145,9 @@ if(isset($_GET['update'])){
         <div>タンパク質　<?php echo $protein;?>g</div>
         <div>脂質　<?php echo $lipid;?>g</div>
         <div>塩分　<?php echo $salt;?>g</div>
+    </div>
+    <div class="icon-author">
+    <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
     </div>
 </body>
 </html>

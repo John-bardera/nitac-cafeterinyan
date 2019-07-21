@@ -9,12 +9,17 @@ form {
     width: 40px;
 }
 .back-button-icon {
-    font-size: 32px;
     position: fixed;
     left: 0;
     margin: 4px;
+    height: 32px;
+    width: 32px;
 }
 img {
     min-height: 40%;
     height: 40%;
+}
+
+.icon-author {
+    font-size: 0.1px;
 }
