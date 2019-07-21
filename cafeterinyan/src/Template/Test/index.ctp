@@ -117,9 +117,7 @@ if(isset($_GET['update'])){
             <input type="hidden" name="update" value="0asdfnmasdfkasdfo9fsd">
             <input type="submit" value = "×" class="back-submit">
         </form>
-        <div class="back-button">
-            <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
-        </div>
+        <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
     <div class="menu-name"><?php echo $name;?></div>
@@ -139,12 +137,27 @@ if(isset($_GET['update'])){
             <input type="submit" value = "販売状況 : <?php if(($sold - $pushSold) == 0){echo '売り切れ中';}else{echo '販売中';}?>"/>
         </form>
     </div>
-    <div>
-        <div>値段　<?php echo $price;?>円</div>
-        <div>エネルギー　<?php echo $energy;?>kcal</div>
-        <div>タンパク質　<?php echo $protein;?>g</div>
-        <div>脂質　<?php echo $lipid;?>g</div>
-        <div>塩分　<?php echo $salt;?>g</div>
+    <div class="menu-status-wrapper">
+        <div class="status-wrapper">
+            <div class="status-name">値段</div>
+            <div class="status-value"><?php echo $price;?>円</div>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-name">エネルギー</div>
+            <div class="status-value"><?php echo $energy;?>kcal</div>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-name">タンパク質</div>
+            <div class="status-value"><?php echo $protein;?>g</div>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-name">脂質</div>
+            <div class="status-value"><?php echo $lipid;?>g</div>
+        </div>
+        <div class="status-wrapper">
+            <div class="status-name">塩分</div>
+            <div class="status-value"><?php echo $salt;?>g</div>
+        </div>
     </div>
     <div class="icon-author">
     <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>

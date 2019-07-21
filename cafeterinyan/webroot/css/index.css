@@ -1,5 +1,6 @@
 form {
     opacity: 0;
+    z-index: 1000;
 }
 .header {
     height: 40px;
@@ -19,7 +20,20 @@ form {
     min-height: 40%;
     height: 40%;
 }
-
+.menu-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 8px;
+}
+.menu-status-wrapper {
+    flex-direction: column;
+}
+.status-wrapper {
+    flex-direction: row;
+}
 .icon-author {
-    font-size: 0.1px;
+    font-size: 10px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }
