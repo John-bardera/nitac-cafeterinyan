@@ -31,7 +31,7 @@ div {
 	flex-direction: row;
 	min-height: 25%;
     width: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 4%;
 }
 .today {
     flex-direction: column;
@@ -111,7 +111,7 @@ div {
 }
 .josetsu {
     height: 30%;
-    margin-bottom: 8px;
+    margin-bottom: 2.5%;
 }
 .weekly {
     height: 35%;
