@@ -120,46 +120,48 @@ if(isset($_GET['update'])){
         <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
-    <div class="menu-name"><?php echo $name;?></div>
-    <div class="menu-value"><?php echo $price;?>円</div>
-    <div class="iine-wrapper">
-        <div class="form-title">いいね数</div>
-        <form action='' method='GET'>
-            <input type="hidden" name="id" value="<?php echo $id;?>"/>
-            <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
-            <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
-            <input type="submit" value = "超いいね : <?php echo $likes + $pushLikes;?>"/>
-        </form>
-    </div>
-    <div class="sold-wrapper">
-        <div class="form-title">売り切れ情報</div>
-        <form action='' method = 'GET'>
-            <input type="hidden" name="id" value="<?php echo $id;?>">
-            <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
-            <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
-            <input type="submit" value = "販売状況 : <?php if(($sold - $pushSold) == 0){echo '売り切れ中';}else{echo '販売中';}?>"/>
-        </form>
-    </div>
-    <div class="menu-status-wrapper">
-        <div class="status-wrapper">
-            <div class="status-name">エネルギー</div>
-            <div class="status-value"><?php echo $energy;?>kcal</div>
+    <div class="content-text-part">
+        <div class="menu-name"><?php echo $name;?></div>
+        <div class="menu-value"><?php echo $price;?>円</div>
+        <div class="iine-wrapper">
+            <div class="form-title">いいね数</div>
+            <form action='' method='GET'>
+                <input type="hidden" name="id" value="<?php echo $id;?>"/>
+                <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
+                <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
+                <input type="submit" value = "超いいね : <?php echo $likes + $pushLikes;?>"/>
+            </form>
         </div>
-        <div class="status-wrapper">
-            <div class="status-name">タンパク質</div>
-            <div class="status-value"><?php echo $protein;?>g</div>
+        <div class="sold-wrapper">
+            <div class="form-title">売り切れ情報</div>
+            <form action='' method = 'GET'>
+                <input type="hidden" name="id" value="<?php echo $id;?>">
+                <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
+                <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
+                <input type="submit" value = "販売状況 : <?php if(($sold - $pushSold) == 0){echo '売り切れ中';}else{echo '販売中';}?>"/>
+            </form>
         </div>
-        <div class="status-wrapper">
-            <div class="status-name">脂質</div>
-            <div class="status-value"><?php echo $lipid;?>g</div>
+        <div class="menu-status-wrapper">
+            <div class="status-wrapper">
+                <div class="status-name">エネルギー</div>
+                <div class="status-value"><?php echo $energy;?>kcal</div>
+            </div>
+            <div class="status-wrapper">
+                <div class="status-name">タンパク質</div>
+                <div class="status-value"><?php echo $protein;?>g</div>
+            </div>
+            <div class="status-wrapper">
+                <div class="status-name">脂質</div>
+                <div class="status-value"><?php echo $lipid;?>g</div>
+            </div>
+            <div class="status-wrapper">
+                <div class="status-name">塩分</div>
+                <div class="status-value"><?php echo $salt;?>g</div>
+            </div>
         </div>
-        <div class="status-wrapper">
-            <div class="status-name">塩分</div>
-            <div class="status-value"><?php echo $salt;?>g</div>
+        <div class="icon-author">
+            <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
         </div>
-    </div>
-    <div class="icon-author">
-    <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
     </div>
 </body>
 </html>

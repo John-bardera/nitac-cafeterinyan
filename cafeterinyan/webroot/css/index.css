@@ -20,10 +20,12 @@ form {
     min-height: 40%;
     height: 40%;
 }
+.content-text-part {
+    padding: 4px 0 0 4px;
+}
 .menu-name {
-    font-size: 5vw;
+    font-size: 5.7vw;
     font-weight: bold;
-    margin: 8px;
 }
 .menu-value {
     font-size: 4vw;
@@ -33,7 +35,7 @@ form {
 }
 .status-wrapper {
     flex-direction: row;
-    border-bottom: dashed 1px azure
+    border-bottom: dashed 1px
 }
 .status-name {
     width: 50%;
