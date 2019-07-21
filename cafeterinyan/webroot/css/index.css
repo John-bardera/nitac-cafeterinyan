@@ -17,8 +17,8 @@ form {
     width: 32px;
 }
 .menu-image {
-    min-height: 40%;
-    height: 40%;
+    min-height: 45%;
+    height: 45%;
 }
 .content-text-part {
     padding: 4px 0 0 4px;
@@ -34,22 +34,22 @@ form {
 .menu-value {
     font-size: 5vw;
     font-weight: 500;
-    width: 50%;
+    width: 45%;
 }
 .menu-status-wrapper {
     flex-direction: column;
     position: fixed;
     width: 100%;
-    bottom: 40px;
+    bottom: 64px;
 }
 .status-wrapper {
     flex-direction: row;
-    border-bottom: dashed 1px
+    border-bottom: dashed 1px;
+    margin-top: 8px;
 }
 .status-name, .status-value {
     width: 50%;
     margin-left: 8px;
-    margin-top: 2px;
 }
 .icon-author {
     font-size: 10px;
@@ -61,6 +61,8 @@ form {
     width: 25%;
     background: white;
     border-radius: 24px;
+    margin: 0 8px 0 0;
+    box-shadow: 2px 2px 4px 0 darkgrey;
 }
 .iine-wrapper:hover, .sold-wrapper:hover {
     filter: brightness(0.8);
@@ -72,19 +74,22 @@ form {
 .form-title-wrapper {
     position: fixed;
     height: 32px;
-    width: 25%;
+    width: 25vw;
 }
 .form-title {
     justify-content: center;
     align-content: center;
     margin: auto;
     width: 100%;
+    font-size: 16px;
 }
 .heart {
+    fill: red;
     width: 16px;
     height: 16px;
-    transform: translateY(1px);
+    transform: translateY(2px);
+    margin: 0 4px;
 }
-.iine-text {
-    font-size: 20px;
+.sold-status {
+    font-size: 14px;
 }
