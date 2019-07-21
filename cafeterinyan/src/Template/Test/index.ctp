@@ -122,28 +122,30 @@ if(isset($_GET['update'])){
     <img class="menu-image" src=<?php echo $image;?>/>
     <div class="content-text-part">
         <div class="menu-name"><?php echo $name;?></div>
-        <div class="menu-value"><?php echo $price;?>円</div>
-        <div class="iine-wrapper">
-            <div class="form-title-wrapper">
-                <div class="form-title">超いいね<?php echo $likes + $pushLikes;?></div>
+        <div class="column-content">
+            <div class="menu-value"><?php echo $price;?>円</div>
+            <div class="iine-wrapper">
+                <div class="form-title-wrapper">
+                    <div class="form-title">超いいね<?php echo $likes + $pushLikes;?></div>
+                </div>
+                <form class="iine-form" action='' method='GET'>
+                    <input type="hidden" name="id" value="<?php echo $id;?>"/>
+                    <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
+                    <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
+                    <input type="submit" value = ""/>
+                </form>
             </div>
-            <form class="iine-form" action='' method='GET'>
-                <input type="hidden" name="id" value="<?php echo $id;?>"/>
-                <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
-                <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
-                <input type="submit" value = ""/>
-            </form>
-        </div>
-        <div class="sold-wrapper">
-            <div class="form-title-wrapper">
-                <div class="form-title">売り切れ<?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
+            <div class="sold-wrapper">
+                <div class="form-title-wrapper">
+                    <div class="form-title">売り切れ<?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
+                </div>
+                <form class="sold-form" action='' method = 'GET'>
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
+                    <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
+                    <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
+                    <input type="submit" value=""/>
+                </form>
             </div>
-            <form class="sold-form" action='' method = 'GET'>
-                <input type="hidden" name="id" value="<?php echo $id;?>">
-                <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
-                <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
-                <input type="submit" value=""/>
-            </form>
         </div>
         <div class="menu-status-wrapper">
             <div class="status-wrapper">
