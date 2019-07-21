@@ -121,7 +121,7 @@ if(isset($_GET['update'])){
             <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
         </div>
     </div>
-    <img src=<?php echo $image;?>/>
+    <img class="menu-image" src=<?php echo $image;?>/>
     <div class="menu-name"><?php echo $name;?></div>
     <div class="iine-wrapper">
         <form action='' method='GET'>
