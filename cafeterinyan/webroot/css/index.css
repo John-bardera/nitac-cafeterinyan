@@ -57,16 +57,21 @@ form {
     right: 0;
     bottom: 0;
 }
-
+.iine-wrapper, .sold-wrapper {
+    width: 25%;
+}
 .iine-form, .sold-form {
     height: 32px;
+    width: 100%;
 }
 .form-title-wrapper {
     position: fixed;
     height: 32px;
-    width: 25%;
 }
 .form-title {
     display: block;
     text-align: center;
+}
+.heart {
+    content: '&#9829';
 }

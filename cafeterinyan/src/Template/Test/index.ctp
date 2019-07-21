@@ -126,7 +126,7 @@ if(isset($_GET['update'])){
             <div class="menu-value"><?php echo $price;?>円</div>
             <div class="iine-wrapper">
                 <div class="form-title-wrapper">
-                    <div class="form-title">超いいね<?php echo $likes + $pushLikes;?></div>
+                    <div class="form-title"><div class="heart"></div><?php echo $likes + $pushLikes;?></div>
                 </div>
                 <form class="iine-form" action='' method='GET'>
                     <input type="hidden" name="id" value="<?php echo $id;?>"/>
@@ -137,7 +137,7 @@ if(isset($_GET['update'])){
             </div>
             <div class="sold-wrapper">
                 <div class="form-title-wrapper">
-                    <div class="form-title">売り切れ<?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
+                    <div class="form-title"><?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
                 </div>
                 <form class="sold-form" action='' method = 'GET'>
                     <input type="hidden" name="id" value="<?php echo $id;?>">
