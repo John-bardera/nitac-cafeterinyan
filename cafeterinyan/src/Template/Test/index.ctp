@@ -142,7 +142,7 @@ if(isset($_GET['update'])){
             </div>
             <div class="sold-wrapper">
                 <div class="form-title-wrapper">
-                    <div class="form-title"><?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
+                    <div class="form-title sold-status"><?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
                 </div>
                 <form class="sold-form" action='' method = 'GET'>
                     <input type="hidden" name="id" value="<?php echo $id;?>">
