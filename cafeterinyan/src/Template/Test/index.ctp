@@ -120,7 +120,10 @@ if(isset($_GET['update'])){
         <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
-    <div class="menu-name"><?php echo $name;?></div>
+    <div class="menu-title">
+        <div class="menu-name"><?php echo $name;?></div>
+        <div class="menu-value"><?php echo $price;?>円</div>
+    </div>
     <div class="iine-wrapper">
         <form action='' method='GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>"/>
@@ -138,10 +141,6 @@ if(isset($_GET['update'])){
         </form>
     </div>
     <div class="menu-status-wrapper">
-        <div class="status-wrapper">
-            <div class="status-name">値段</div>
-            <div class="status-value"><?php echo $price;?>円</div>
-        </div>
         <div class="status-wrapper">
             <div class="status-name">エネルギー</div>
             <div class="status-value"><?php echo $energy;?>kcal</div>
