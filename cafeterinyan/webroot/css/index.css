@@ -15,6 +15,7 @@ form {
     margin: 4px;
     height: 32px;
     width: 32px;
+    fill: rgb(47, 48, 69);
 }
 .menu-image {
     min-height: 45%;
@@ -50,12 +51,6 @@ form {
 .status-name, .status-value {
     width: 50%;
     margin-left: 8px;
-}
-.icon-author {
-    font-size: 10px;
-    position: fixed;
-    right: 0;
-    bottom: 0;
 }
 .iine-wrapper, .sold-wrapper {
     width: 25%;

@@ -117,7 +117,9 @@ if(isset($_GET['update'])){
             <input type="hidden" name="update" value="0asdfnmasdfkasdfo9fsd">
             <input type="submit" value = "×" class="back-submit">
         </form>
-        <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
+        <svg class="back-button-icon" viewbox="0 0 100 100">
+            <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
+        </svg>
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
     <div class="content-text-part">
@@ -169,9 +171,6 @@ if(isset($_GET['update'])){
                 <div class="status-name">塩分</div>
                 <div class="status-value"><?php echo $salt;?> g</div>
             </div>
-        </div>
-        <div class="icon-author">
-            <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
         </div>
     </div>
 </body>
