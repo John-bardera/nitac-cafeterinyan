@@ -30,6 +30,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <?= $this->Html->css('style.css') ?>
     <?= $this->Html->css('index.css') ?>
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    <a href="https://icons8.com/icon/39800/back">Back icon by Icons8</a>
 </head>
 <?php
 $conn = "host=localhost port=5432 dbname=team5db user=team5 password=hogenyan";
@@ -118,8 +119,7 @@ if(isset($_GET['update'])){
             <input type="submit" value = "×" class="back-submit">
         </form>
         <div class="back-button">
-            <div class="back-button-text"></div>
-            <!--<ion-icon name="arrow-round-back" class="back-button-icon"></ion-icon>-->
+            <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
         </div>
     </div>
     <img src=<?php echo $image;?>/>
