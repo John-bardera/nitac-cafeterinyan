@@ -59,6 +59,11 @@ form {
 }
 .iine-wrapper, .sold-wrapper {
     width: 25%;
+    background: white;
+    border-radius: 24px;
+}
+.iine-wrapper:hover, .sold-wrapper:hover {
+    filter: brightness(0.8);
 }
 .iine-form, .sold-form {
     height: 32px;
@@ -67,11 +72,19 @@ form {
 .form-title-wrapper {
     position: fixed;
     height: 32px;
+    width: 25%;
 }
 .form-title {
-    display: block;
-    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    width: 100%;
 }
 .heart {
-    content: '&#9829';
+    width: 16px;
+    height: 16px;
+    transform: translateY(1px);
+}
+.iine-text {
+    font-size: 20px;
 }
