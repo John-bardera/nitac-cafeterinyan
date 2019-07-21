@@ -93,3 +93,7 @@ form {
 .sold-status {
     font-size: 14px;
 }
+.status-submit {
+    height: 100%;
+    width: 100%;
+}

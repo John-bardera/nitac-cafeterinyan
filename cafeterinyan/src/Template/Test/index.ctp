@@ -137,7 +137,7 @@ if(isset($_GET['update'])){
                     <input type="hidden" name="id" value="<?php echo $id;?>"/>
                     <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
                     <input type="hidden" name="Sold" value="<?php echo $pushSold;?>"/>
-                    <input type="submit" value = ""/>
+                    <input type="submit" value="" class="status-submit"/>
                 </form>
             </div>
             <div class="sold-wrapper">
@@ -148,7 +148,7 @@ if(isset($_GET['update'])){
                     <input type="hidden" name="id" value="<?php echo $id;?>">
                     <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
                     <input type="hidden" name="Sold" value="<?php if($pushSold == 0){echo 1;}else{echo 0;} ?>"/>
-                    <input type="submit" value=""/>
+                    <input type="submit" value="" class="status-submit"/>
                 </form>
             </div>
         </div>
