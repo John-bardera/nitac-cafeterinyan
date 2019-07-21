@@ -4,6 +4,7 @@ form {
 }
 .header {
     height: 40px;
+    margin: 4px;
 }
 .back-submit {
     height: 100%;
@@ -12,7 +13,7 @@ form {
 .back-button-icon {
     position: fixed;
     left: 0;
-    margin: 4px;
+    margin: 4px 8px;
     height: 32px;
     width: 32px;
     fill: rgb(47, 48, 69);
@@ -28,14 +29,15 @@ form {
 .menu-name {
     font-size: 5.7vw;
     font-weight: bold;
+    margin-bottom: 8px;
 }
 .columun-content {
     flex-direction: column;
 }
 .menu-value {
-    font-size: 5vw;
-    font-weight: 500;
+    font-size: 24px;
     width: 45%;
+    margin-left: 8px;
 }
 .menu-status-wrapper {
     flex-direction: column;
@@ -76,14 +78,14 @@ form {
     align-content: center;
     margin: auto;
     width: 100%;
-    font-size: 16px;
+    font-size: 5vw;
 }
 .heart {
     fill: red;
-    width: 16px;
-    height: 16px;
-    transform: translateY(2px);
-    margin: 0 4px;
+    width: 5vw;
+    height: 5vw;
+    transform: translateY(3px);
+    margin: 0 4px 0 0;
 }
 .sold-status {
     font-size: 14px;
