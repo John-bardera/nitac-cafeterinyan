@@ -120,11 +120,10 @@ if(isset($_GET['update'])){
         <img class="back-button-icon" src="https://img.icons8.com/metro/26/000000/back.png">
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
-    <div class="menu-title">
-        <div class="menu-name"><?php echo $name;?></div>
-        <div class="menu-value"><?php echo $price;?>円</div>
-    </div>
+    <div class="menu-name"><?php echo $name;?></div>
+    <div class="menu-value"><?php echo $price;?>円</div>
     <div class="iine-wrapper">
+        <div class="form-title">いいね数</div>
         <form action='' method='GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>"/>
             <input type="hidden" name="Lsum" value="<?php if($pushLikes < 100){echo ($pushLikes+1);}else{echo 100;}?>"/>
@@ -133,6 +132,7 @@ if(isset($_GET['update'])){
         </form>
     </div>
     <div class="sold-wrapper">
+        <div class="form-title">売り切れ情報</div>
         <form action='' method = 'GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>">
             <input type="hidden" name="Lsum" value="<?php echo $pushLikes; ?>" />
