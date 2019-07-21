@@ -28,9 +28,13 @@ form {
     font-size: 5.7vw;
     font-weight: bold;
 }
+.columun-content {
+    flex-direction: column;
+}
 .menu-value {
     font-size: 5vw;
     font-weight: 500;
+    width: 50%;
 }
 .menu-status-wrapper {
     flex-direction: column;
@@ -60,6 +64,7 @@ form {
 .form-title-wrapper {
     position: fixed;
     height: 32px;
+    width: 25%;
 }
 .form-title {
     display: block;
