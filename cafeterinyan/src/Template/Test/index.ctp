@@ -108,7 +108,7 @@ $close_flag = pg_close($link);
 if(isset($_GET['update'])){
     if($_GET['update'] == "0asdfnmasdfkasdfo9fsd"){
         Update($id,$pushLikes,$pushSold);
-        header("Location:");
+        header("Location: ./");
         exit;
     }
 }
