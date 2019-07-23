@@ -56,10 +56,10 @@ form {
 }
 .iine-wrapper, .sold-wrapper {
     width: 25%;
-    background: gray;
+    background: floralwhite;
     border-radius: 24px;
     margin: 0 8px 0 0;
-    box-shadow: 2px 2px 4px 0 darkslategray;
+    box-shadow: 2px 2px 4px 0 darkgray;
 }
 .iine-wrapper:hover, .sold-wrapper:hover {
     filter: brightness(0.8);
@@ -80,6 +80,7 @@ form {
     width: 100%;
     font-size: 5vw;
     transform: translateY(2px);
+    color: rgb(47, 48, 69);
 }
 .heart {
     fill: red;
