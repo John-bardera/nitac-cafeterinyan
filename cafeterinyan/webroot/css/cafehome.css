@@ -73,10 +73,9 @@ div {
 }
 .heart {
     fill: red;
-    width: 5vw;
-    height: 5vw;
-    transform: translateY(1px);
-    margin: 0 4px 0 0;
+    width: 6vw;
+    height: 6vw;
+    margin: 0 2px 0 8px;
 }
 .sold-wrapper {
     z-index: 3;
@@ -165,10 +164,10 @@ div {
 }
 .other-heart {
     fill: red;
-    width: 5vw;
-    height: 5vw;
+    width: 3vw;
+    height: 3vw;
     transform: translateY(1px);
-    margin: 0 2px 0 0;
+    margin: 0 1px 0 0;
 }
 .weekly-date {
     width: 25%;
