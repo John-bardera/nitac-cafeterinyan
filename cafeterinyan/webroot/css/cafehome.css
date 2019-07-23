@@ -130,7 +130,7 @@ div {
 }
 .other-content-wrapper {
     flex-direction: column;
-    height: auto;
+    height: calc(100% - 16px);
 }
 .other-content-upper, .other-content-under {
     flex-direction: row;
