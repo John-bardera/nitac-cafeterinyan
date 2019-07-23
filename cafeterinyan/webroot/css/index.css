@@ -1,3 +1,8 @@
+body {
+    background-color: #e74c3c;
+    animation: bg-color 5s infinite;
+    -webkit-animation: bg-color 5s infinite;
+}
 form {
     opacity: 0;
     z-index: 1000;
@@ -106,9 +111,6 @@ form {
     font-size: 10vw;
     font-weight: bold;
     margin: 40px;
-    background-color: #e74c3c;
-    animation: bg-color 10s infinite;
-    -webkit-animation: bg-color 10s infinite;
 }
 @-webkit-keyframes bg-color {
     0% { background-color: #e74c3c; }
