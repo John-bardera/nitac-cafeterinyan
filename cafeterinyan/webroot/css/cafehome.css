@@ -8,8 +8,10 @@ body {
 	height: 100%;
     width: 100%;
     line-height: normal !important;
-    background-color: floralwhite;
-    color: rgb(47, 48, 69);
+    /*background-color: floralwhite;
+    color: rgb(47, 48, 69);*/
+    background-color: rgb(47, 48, 69);
+    color: floralwhite;
 }
 div {
 	display: flex;

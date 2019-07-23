@@ -16,7 +16,8 @@ form {
     margin: 4px 8px;
     height: 32px;
     width: 32px;
-    fill: rgb(47, 48, 69);
+    /*fill: rgb(47, 48, 69);*/
+    fill: floralwhite;
 }
 .menu-image {
     min-height: 45%;
