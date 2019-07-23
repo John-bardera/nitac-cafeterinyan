@@ -26,8 +26,10 @@ body {
 	height: 100%;
     width: 100%;
     line-height: normal !important;
-    background-color: floralwhite !important;
-    color: rgb(47, 48, 69) !important;
+    /*background-color: floralwhite !important;
+    color: rgb(47, 48, 69) !important;*/
+    color: floralwhite !important;
+    background: rgb(47, 48, 69) !important;
 }
 div {
 	display: flex;
