@@ -73,7 +73,9 @@ $add_date = 1;
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
                 <div class="iine">
-                    <ion-icon name="heart" class="heart"></ion-icon>
+                        <svg class="heart" viewBox="0 0 32 29.6">
+                            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                        </svg>
                     <div class="iine-number"><?php echo $taarr[2] ?></div>
                 </div>
             </div>
@@ -93,7 +95,9 @@ $add_date = 1;
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
                 <div class="iine">
-                    <ion-icon name="heart" class="heart"></ion-icon>
+                    <svg class="heart" viewBox="0 0 32 29.6">
+                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                    </svg>
                     <div class="iine-number"><?php echo $tbbrr[2] ?></div>
                 </div>
             </div>
@@ -119,7 +123,12 @@ $add_date = 1;
                 <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
                 <div class="iine-wrapper cover-content">
                     <div class="other-iine-box">
-                        <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $jo[2] ?></div>
+                        <div class="other-iine">
+                            <svg class="other-heart" viewBox="0 0 32 29.6">
+                                <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                            </svg>
+                            <?php echo $jo[2] ?>
+                        </div>
                     </div>
                 </div>
                 <div class="sold-wrapper cover-content">
@@ -140,7 +149,12 @@ $add_date = 1;
                         <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"></a>
                         <div class="iine-wrapper cover-content">
                             <div class="other-iine-box">
-                                <div class="other-iine"><ion-icon name="heart" class="other-heart"></ion-icon><?php echo $kjo[2] ?></div>
+                                <div class="other-iine">
+                                    <svg class="heart" viewBox="0 0 32 29.6">
+                                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                                    </svg>
+                                    <?php echo $kjo[2] ?>
+                                </div>
                             </div>
                         </div>
                         <div class="sold-wrapper cover-content">
