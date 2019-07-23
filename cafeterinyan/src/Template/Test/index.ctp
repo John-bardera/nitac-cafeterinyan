@@ -142,7 +142,7 @@ if(isset($_GET['update'])){
                     <input type="submit" value="" class="status-submit"/>
                 </form>
             </div>
-            <div class="sold-wrapper">
+            <div class="sold-wrapper <?php ($sold - $pushSold) == 0 ? print "sold" : print "" ?>">
                 <div class="form-title-wrapper">
                     <div class="form-title sold-status"><?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
                 </div>
