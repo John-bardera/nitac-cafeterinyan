@@ -114,7 +114,7 @@ if(isset($_GET['update'])){
     }
 }
 ?>
-<body>
+<body class="<?php $today == 0 ? print "rainbow-background" : print "" ?>">
     <div class="header">
         <form action='' method = 'GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>"/>

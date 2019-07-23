@@ -1,4 +1,4 @@
-body {
+.rainbow-background {
     background-color: #e74c3c;
     animation: bg-color 5s infinite;
     -webkit-animation: bg-color 5s infinite;
@@ -110,7 +110,7 @@ form {
     justify-content: center;
     font-size: 10vw;
     font-weight: bold;
-    margin: 40px;
+    margin: 32px;
 }
 @-webkit-keyframes bg-color {
     0% { background-color: #e74c3c; }
@@ -120,7 +120,7 @@ form {
     80% { background-color: #9b59b6; }
     100% { background-color: #e74c3c; }
   }
-  @keyframes bg-color {
+@keyframes bg-color {
     0% { background-color: #e74c3c; }
     20% { background-color: #f1c40f; }
     40% { background-color: #1abc9c; }
