@@ -24,8 +24,8 @@ form {
     fill: floralwhite;
 }
 .menu-image {
-    min-height: 45%;
-    height: 45%;
+    min-height: 50%;
+    height: 50%;
 }
 .content-text-part {
     padding: 4px 0 0 4px;
@@ -48,7 +48,7 @@ form {
     flex-direction: column;
     position: fixed;
     width: 100%;
-    bottom: 8%;
+    bottom: 4%;
 }
 .status-wrapper {
     flex-direction: row;
