@@ -99,3 +99,6 @@ form {
     height: 100%;
     width: 100%;
 }
+.unvisible {
+    display: none;
+}

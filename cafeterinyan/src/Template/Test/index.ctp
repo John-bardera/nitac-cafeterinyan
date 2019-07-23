@@ -75,6 +75,12 @@ $protein = $arr[12];
 $lipid = $arr[13];
 $salt = $arr[14];
 
+if($arr[1] == date("Y-m-d")){
+    $today = 1;
+}else{
+    $today = 0;
+}
+
 $close_flag = pg_close($link);
 
 function Update($id,$pushLikes,$pushSold){
@@ -126,7 +132,7 @@ if(isset($_GET['update'])){
         <div class="menu-name"><?php echo $name;?></div>
         <div class="column-content">
             <div class="menu-value"><?php echo $price;?>円</div>
-            <div class="iine-wrapper">
+            <div class="iine-wrapper <?php $today == 0 ? print "unvisible" : print "" ?>">
                 <div class="form-title-wrapper">
                     <div class="form-title">
                         <svg class="heart" viewBox="0 0 32 29.6">
@@ -142,7 +148,7 @@ if(isset($_GET['update'])){
                     <input type="submit" value="" class="status-submit"/>
                 </form>
             </div>
-            <div class="sold-wrapper <?php ($sold - $pushSold) == 0 ? print "sold" : print "" ?>">
+            <div class="sold-wrapper <?php $today == 0 ? print "unvisible" : print "" ?> <?php ($sold - $pushSold) == 0 ? print "sold" : print "" ?>">
                 <div class="form-title-wrapper">
                     <div class="form-title sold-status"><?php ($sold - $pushSold) == 0 ? print "売り切れ中" : print "販売中" ?></div>
                 </div>
