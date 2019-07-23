@@ -68,7 +68,7 @@ $add_date = 1;
         ?>
         <div class="today-title"><?php mb_strlen($taarr[0], 'UTF-8') >= 10 ? print mb_substr($taarr[0], 0, 9, 'UTF-8') . '...' : print $taarr[0] ?></div>
         <img src="<?php echo $taarr[1] ?>" class="today-img <?php $taarr[4] == 1 ? null : print 'gray-filter' ?>">
-        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $taarr[3] ?>"></a>
+        <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $taarr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
                 <div class="iine">
@@ -90,7 +90,7 @@ $add_date = 1;
         ?>
         <div class="today-title"><?php mb_strlen($tbbrr[0], 'UTF-8') >= 10 ? print mb_substr($tbbrr[0], 0, 9, 'UTF-8') . '...' : print $tbbrr[0] ?></div>
         <img src="<?php echo $tbbrr[1] ?>" class="today-img <?php $tbbrr[4] == 1 ? null : print 'gray-filter' ?>">
-        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $tbbrr[3] ?>"></a>
+        <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $tbbrr[3] ?>"></a>
         <div class="iine-wrapper cover-content">
             <div class="iine-box">
                 <div class="iine">
@@ -119,7 +119,7 @@ $add_date = 1;
             <div class="other-content">
                 <div class="other-name"><?php mb_strlen($jo[0], 'UTF-8') >= 7 ? print mb_substr($jo[0], 0, 6, 'UTF-8') . '...' : print $jo[0] ?></div>
                 <img src="<?php echo $jo[1] ?>" class="today-img <?php $jo[4] == 1 ? null : print 'gray-filter' ?>"/>
-                <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $jo[3] ?>"></a>
+                <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $jo[3] ?>"></a>
                 <div class="iine-wrapper cover-content">
                     <div class="other-iine-box">
                         <div class="other-iine">
@@ -145,7 +145,7 @@ $add_date = 1;
                     <div class="other-content">
                         <div class="other-name"><?php mb_strlen($kjo[0], 'UTF-8') >= 7 ? print mb_substr($kjo[0], 0, 6, 'UTF-8') . '...' : print $kjo[0] ?></div>
                         <img src="<?php echo $kjo[1] ?>" class="today-img <?php $kjo[4] == 1 ? null : print 'gray-filter' ?>"/>
-                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $kjo[3] ?>"></a>
+                        <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $kjo[3] ?>"></a>
                         <div class="iine-wrapper cover-content">
                             <div class="other-iine-box">
                                 <div class="other-iine">
@@ -202,7 +202,7 @@ $add_date = 1;
                     <div class="other-content">
                         <div class="other-name"><?php mb_strlen($wawa[0], 'UTF-8') >= 7 ? print mb_substr($wawa[0], 0, 6, 'UTF-8') . '...' : print $wawa[0] ?></div>
                         <img src="<?php echo $wawa[1] ?>" class="today-img"/>
-                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wawa[3] ?>"></a>
+                        <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $wawa[3] ?>"></a>
                     </div>
                 <?php } ?>
             <?php } ?>
@@ -221,7 +221,7 @@ $add_date = 1;
                     <div class="other-content">
                         <div class="other-name"><?php mb_strlen($wbwb[0], 'UTF-8') >= 7 ? print mb_substr($wbwb[0], 0, 6, 'UTF-8') . '...' : print $wbwb[0] ?></div>
                         <img src="<?php echo $wbwb[1] ?>" class="today-img"/>
-                        <a class="link cover-content" href="http://172.16.16.7:<?php echo $port ?>/test?id=<?php echo $wbwb[3] ?>"></a>
+                        <a class="link cover-content" href="http://172.16.16.7/team5/test?id=<?php echo $wbwb[3] ?>"></a>
                     </div>
                 <?php } ?>
             <?php } ?>
