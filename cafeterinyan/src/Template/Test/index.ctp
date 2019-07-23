@@ -127,7 +127,7 @@ if(isset($_GET['update'])){
             <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
         </svg>
     </div>
-    <img class="menu-image" src=<?php echo $image;?>/>
+    <img class="menu-image" src=<?php $name ? print $image : print "https://i1.wp.com/pronama.jp/wp-content/uploads/2016/07/stamp_01.png?ssl=1" ;?>/>
     <?php if ($name) { ?>
     <div class="content-text-part">
         <div class="menu-name"><?php echo $name;?></div>
@@ -181,7 +181,7 @@ if(isset($_GET['update'])){
         </div>
     </div>
     <?php } else { ?>
-    <div class="error-message">エラーやで</div>
+    <div class="error-message">404 (Not Found)</div>
     <?php } ?>
 </body>
 </html>
