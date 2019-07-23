@@ -101,3 +101,7 @@ form {
 .invisible {
     display: none;
 }
+.error-message {
+    justify-content: center;
+    font-size: 10vw;
+}
