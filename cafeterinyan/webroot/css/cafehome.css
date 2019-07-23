@@ -72,9 +72,11 @@ div {
     margin: auto 0;
 }
 .heart {
-    color: red;
-    font-size: 24px;
-    margin: auto 4px;
+    fill: red;
+    width: 5vw;
+    height: 5vw;
+    transform: translateY(1px);
+    margin: 0 4px 0 0;
 }
 .sold-wrapper {
     z-index: 3;
@@ -162,8 +164,11 @@ div {
     color: rgb(47, 48, 69);
 }
 .other-heart {
-    color: red;
-    margin: auto 2px;
+    fill: red;
+    width: 5vw;
+    height: 5vw;
+    transform: translateY(1px);
+    margin: 0 2px 0 0;
 }
 .weekly-date {
     width: 25%;
