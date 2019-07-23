@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
 $result = pg_query_params($link,'SELECT * FROM daily_menu LEFT OUTER JOIN menu_info ON daily_menu.id = menu_info.id WHERE menu_info.id = $1',array($id));
 $arr = pg_fetch_array($result);
 
-$image = $arr[10];
+$image = mb_substr($arr[10], -1, 1, 'UTF-8') == '/' ? mb_substr($arr[10], 0, 1, 'UTF-8') : $arr[10];
 $name = $arr[8];
 $price = $arr[9];
 $sold = $arr[2];
@@ -126,7 +126,7 @@ if(isset($_GET['update'])){
             <path class="arrow" d="M 50,0 L 60,10 L 20,50 L 60,90 L 50,100 L 0,50 Z" />
         </svg>
     </div>
-    <img class="menu-image" src=<?php $name ? print $image : print "https://i1.wp.com/pronama.jp/wp-content/uploads/2016/07/stamp_01.png?ssl=1" ;?>/>
+    <img class="menu-image" src=<?php $name ? print $image : print "https://i1.wp.com/pronama.jp/wp-content/uploads/2016/07/stamp_01.png?ssl=1" ?> />
     <?php if ($name) { ?>
     <div class="content-text-part">
         <div class="menu-name"><?php echo $name;?></div>
