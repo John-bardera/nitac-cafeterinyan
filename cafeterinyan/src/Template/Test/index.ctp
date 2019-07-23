@@ -128,6 +128,7 @@ if(isset($_GET['update'])){
         </svg>
     </div>
     <img class="menu-image" src=<?php echo $image;?>/>
+    <?php if ($name) { ?>
     <div class="content-text-part">
         <div class="menu-name"><?php echo $name;?></div>
         <div class="column-content">
@@ -179,6 +180,9 @@ if(isset($_GET['update'])){
             </div>
         </div>
     </div>
+    <?php } else { ?>
+    <div class="error-message">エラーやで</div>
+    <?php } ?>
 </body>
 </html>
 
