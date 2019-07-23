@@ -23,7 +23,6 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <title>
         <?= $cakeDescription ?>
     </title>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <?= $this->Html->meta('icon') ?>
     <?= $this->Html->css('base.css') ?>
