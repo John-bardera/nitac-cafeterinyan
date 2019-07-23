@@ -54,8 +54,8 @@ div {
     transform: translateY(-200%);
 }
 .iine-box {
-    margin: auto 0 -1px auto;
-    background-color: gray;
+    margin: auto 0 0px auto;
+    background-color: floralwhite;
     height: 32px;
     width: 64px;
 }
@@ -148,14 +148,15 @@ div {
 
 }
 .other-iine-box {
-    margin: auto 0 -1px auto;
-    background-color: gray;
+    margin: auto 0 0px auto;
+    background-color: floralwhite;
     height: 16px;
     width: 32px;
 }
 .other-iine {
     margin: auto;
     font-size: 8px;
+    color: rgb(47, 48, 69);
 }
 .other-heart {
     color: red;
