@@ -60,7 +60,7 @@ $add_date = 1;
         }
     }
 ?>
-<div class="all-image">全てイメージ画像です</div>
+<div class="all-image">画像は全てイメージです</div>
 <div class="todayAB">
     <div class="today">
         <?php
