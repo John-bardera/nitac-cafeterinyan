@@ -16,7 +16,6 @@ form {
     margin: 4px 8px;
     height: 32px;
     width: 32px;
-    /*fill: rgb(47, 48, 69);*/
     fill: floralwhite;
 }
 .menu-image {
@@ -57,10 +56,10 @@ form {
 }
 .iine-wrapper, .sold-wrapper {
     width: 25%;
-    background: white;
+    background: gray;
     border-radius: 24px;
     margin: 0 8px 0 0;
-    box-shadow: 2px 2px 4px 0 darkgrey;
+    box-shadow: 2px 2px 4px 0 darkslategray;
 }
 .iine-wrapper:hover, .sold-wrapper:hover {
     filter: brightness(0.8);
