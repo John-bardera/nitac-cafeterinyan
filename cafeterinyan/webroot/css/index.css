@@ -82,14 +82,13 @@ form {
     margin: auto;
     width: 100%;
     font-size: 5vw;
-    transform: translateY(2px);
     color: rgb(47, 48, 69);
 }
 .heart {
     fill: red;
     width: 5vw;
     height: 5vw;
-    transform: translateY(3px);
+    transform: translateY(1px);
     margin: 0 4px 0 0;
 }
 .sold-status {
