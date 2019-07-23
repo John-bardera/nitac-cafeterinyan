@@ -44,7 +44,7 @@ if (!$link) {
     die('接続失敗です。'.pg_last_error());
 }
 $hogehogenyan = '2019-07-24';
-$add_date = 3;
+$add_date = 1;
 ?>
 
 <?php

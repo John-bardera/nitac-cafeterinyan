@@ -8,8 +8,6 @@ body {
 	height: 100%;
     width: 100%;
     line-height: normal !important;
-    /*background-color: floralwhite;
-    color: rgb(47, 48, 69);*/
     background-color: rgb(47, 48, 69);
     color: floralwhite;
 }
@@ -57,12 +55,13 @@ div {
 }
 .iine-box {
     margin: auto 0 -1px auto;
-    background-color: #ffffff;
+    background-color: gray;
     height: 32px;
     width: 64px;
 }
 .iine {
     margin: auto 0;
+    color: rgb(47, 48, 69);
 }
 .iine-number {
     font-size: 16px;
@@ -150,7 +149,7 @@ div {
 }
 .other-iine-box {
     margin: auto 0 -1px auto;
-    background-color: #ffffff;
+    background-color: gray;
     height: 16px;
     width: 32px;
 }
