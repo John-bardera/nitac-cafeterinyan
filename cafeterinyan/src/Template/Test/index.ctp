@@ -113,7 +113,7 @@ if(isset($_GET['update'])){
     }
 }
 ?>
-<body class="<?php $name ? print "" : print "rainbow-background" ?> <?php echo $arr[1] ?>">
+<body class="<?php $name ? print "" : print "rainbow-background" ?>">
     <div class="header">
         <form action='' method = 'GET'>
             <input type="hidden" name="id" value="<?php echo $id;?>"/>
